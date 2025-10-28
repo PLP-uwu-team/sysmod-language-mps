@@ -115,6 +115,16 @@
             <property role="VOm3f" value="true" />
           </node>
         </node>
+        <node concept="3F2HdR" id="3YnAujarl8v" role="3EZMnx">
+          <ref role="1NtTu8" to="loeo:3YnAujarl8r" resolve="file" />
+          <node concept="l2Vlx" id="3YnAujarl8x" role="2czzBx" />
+          <node concept="lj46D" id="3YnAujarl8y" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="pj6Ft" id="3YnAujarl8z" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
       </node>
       <node concept="3F0ifn" id="3YnAujanO5$" role="3EZMnx">
         <property role="3F0ifm" value="}" />
@@ -134,8 +144,8 @@
     <ref role="1XX52x" to="loeo:3YnAujanK0n" resolve="Group" />
     <node concept="3EZMnI" id="3YnAujanWYc" role="2wV5jI">
       <node concept="l2Vlx" id="3YnAujanWYd" role="2iSdaV" />
-      <node concept="3F0ifn" id="3YnAujanWYe" role="3EZMnx">
-        <property role="3F0ifm" value="group" />
+      <node concept="PMmxH" id="3YnAujaq0oE" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
       </node>
       <node concept="3F0A7n" id="3YnAujanWYf" role="3EZMnx">
         <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
@@ -209,11 +219,11 @@
     </node>
   </node>
   <node concept="24kQdi" id="3YnAujaocES">
-    <ref role="1XX52x" to="loeo:3YnAujao57v" resolve="UserPermission" />
+    <ref role="1XX52x" to="loeo:3YnAujao57v" resolve="SetPermission" />
     <node concept="3EZMnI" id="3YnAujaocFe" role="2wV5jI">
       <node concept="l2Vlx" id="3YnAujaocFf" role="2iSdaV" />
       <node concept="3F1sOY" id="3YnAujaocFn" role="3EZMnx">
-        <ref role="1NtTu8" to="loeo:3YnAujaocEQ" resolve="user" />
+        <ref role="1NtTu8" to="loeo:3YnAujaocEQ" resolve="target" />
       </node>
       <node concept="3F1sOY" id="3YnAujaocFs" role="3EZMnx">
         <ref role="1NtTu8" to="loeo:3YnAujaocER" resolve="permission" />
@@ -224,8 +234,8 @@
     <ref role="1XX52x" to="loeo:3YnAujanKew" resolve="Folder" />
     <node concept="3EZMnI" id="3YnAujaocFx" role="2wV5jI">
       <node concept="l2Vlx" id="3YnAujaocFy" role="2iSdaV" />
-      <node concept="3F0ifn" id="3YnAujaocFz" role="3EZMnx">
-        <property role="3F0ifm" value="folder" />
+      <node concept="PMmxH" id="3YnAujaq0oF" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
       </node>
       <node concept="3F0A7n" id="3YnAujaocF$" role="3EZMnx">
         <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
@@ -236,6 +246,18 @@
           <property role="1413C4" value="body-brace" />
         </node>
         <node concept="ljvvj" id="3YnAujaocFB" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3F0ifn" id="3YnAujapQRQ" role="3EZMnx">
+        <property role="3F0ifm" value="dir" />
+        <node concept="lj46D" id="3YnAujapQRS" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3F1sOY" id="3YnAujaqPW$" role="3EZMnx">
+        <ref role="1NtTu8" to="loeo:3YnAujaqEOQ" resolve="dir" />
+        <node concept="ljvvj" id="3YnAujaqPWA" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
       </node>
@@ -261,6 +283,76 @@
       <node concept="3F0ifn" id="3YnAujaocFO" role="3EZMnx">
         <property role="3F0ifm" value="}" />
         <node concept="3mYdg7" id="3YnAujaocFP" role="3F10Kt">
+          <property role="1413C4" value="body-brace" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="3YnAujaq9Rl">
+    <ref role="1XX52x" to="loeo:3YnAujaq9Ri" resolve="GroupReference" />
+    <node concept="1iCGBv" id="3YnAujaq9Rp" role="2wV5jI">
+      <ref role="1NtTu8" to="loeo:3YnAujaq9Rk" resolve="group" />
+      <node concept="1sVBvm" id="3YnAujaq9Rr" role="1sWHZn">
+        <node concept="3F0A7n" id="3YnAujaq9Rx" role="2wV5jI">
+          <property role="1Intyy" value="true" />
+          <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="3YnAujarl8p">
+    <ref role="1XX52x" to="loeo:3YnAujarl8l" resolve="File" />
+    <node concept="3EZMnI" id="3YnAujarv$G" role="2wV5jI">
+      <node concept="l2Vlx" id="3YnAujarv$H" role="2iSdaV" />
+      <node concept="PMmxH" id="3YnAujarF9m" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+      </node>
+      <node concept="3F0A7n" id="3YnAujarv$J" role="3EZMnx">
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+      </node>
+      <node concept="3F0ifn" id="3YnAujarv$K" role="3EZMnx">
+        <property role="3F0ifm" value="{" />
+        <node concept="3mYdg7" id="3YnAujarv$L" role="3F10Kt">
+          <property role="1413C4" value="body-brace" />
+        </node>
+        <node concept="ljvvj" id="3YnAujarv$M" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3F0ifn" id="3YnAujarv_d" role="3EZMnx">
+        <property role="3F0ifm" value="dir" />
+        <node concept="lj46D" id="3YnAujarv_k" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3F1sOY" id="3YnAujarv_i" role="3EZMnx">
+        <ref role="1NtTu8" to="loeo:3YnAujarl8o" resolve="dir" />
+        <node concept="ljvvj" id="3YnAujarv_l" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3EZMnI" id="3YnAujarv$N" role="3EZMnx">
+        <node concept="l2Vlx" id="3YnAujarv$O" role="2iSdaV" />
+        <node concept="lj46D" id="3YnAujarv$P" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="3F2HdR" id="3YnAujarv$U" role="3EZMnx">
+          <ref role="1NtTu8" to="loeo:3YnAujarl8n" resolve="userpermissions" />
+          <node concept="l2Vlx" id="3YnAujarv$V" role="2czzBx" />
+          <node concept="pj6Ft" id="3YnAujarv$W" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="lj46D" id="3YnAujarv$X" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="ljvvj" id="3YnAujarv$Y" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+      </node>
+      <node concept="3F0ifn" id="3YnAujarv_8" role="3EZMnx">
+        <property role="3F0ifm" value="}" />
+        <node concept="3mYdg7" id="3YnAujarv_9" role="3F10Kt">
           <property role="1413C4" value="body-brace" />
         </node>
       </node>

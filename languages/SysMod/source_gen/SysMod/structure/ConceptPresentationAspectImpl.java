@@ -9,13 +9,16 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
+  private ConceptPresentation props_File;
   private ConceptPresentation props_Folder;
   private ConceptPresentation props_Group;
+  private ConceptPresentation props_GroupReference;
+  private ConceptPresentation props_ITarget;
   private ConceptPresentation props_Permission;
+  private ConceptPresentation props_SetPermission;
   private ConceptPresentation props_System;
   private ConceptPresentation props_User;
   private ConceptPresentation props_UserList;
-  private ConceptPresentation props_UserPermission;
   private ConceptPresentation props_UserReference;
 
   @Override
@@ -23,6 +26,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.File:
+        if (props_File == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_File = cpb.create();
+        }
+        return props_File;
       case LanguageConceptSwitch.Folder:
         if (props_Folder == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -37,6 +47,19 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Group = cpb.create();
         }
         return props_Group;
+      case LanguageConceptSwitch.GroupReference:
+        if (props_GroupReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca689dd2L, 0x3f9799e4ca689dd4L, "group", "", "");
+          props_GroupReference = cpb.create();
+        }
+        return props_GroupReference;
+      case LanguageConceptSwitch.ITarget:
+        if (props_ITarget == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ITarget = cpb.create();
+        }
+        return props_ITarget;
       case LanguageConceptSwitch.Permission:
         if (props_Permission == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -44,6 +67,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Permission = cpb.create();
         }
         return props_Permission;
+      case LanguageConceptSwitch.SetPermission:
+        if (props_SetPermission == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("SetPermission");
+          props_SetPermission = cpb.create();
+        }
+        return props_SetPermission;
       case LanguageConceptSwitch.System:
         if (props_System == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -65,13 +95,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_UserList = cpb.create();
         }
         return props_UserList;
-      case LanguageConceptSwitch.UserPermission:
-        if (props_UserPermission == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("UserPermission");
-          props_UserPermission = cpb.create();
-        }
-        return props_UserPermission;
       case LanguageConceptSwitch.UserReference:
         if (props_UserReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

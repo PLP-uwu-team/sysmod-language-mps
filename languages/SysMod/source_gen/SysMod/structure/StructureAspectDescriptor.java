@@ -4,23 +4,29 @@ package SysMod.structure;
 
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.EnumerationDescriptor;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
-import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
+  /*package*/ final ConceptDescriptor myConceptFile = createDescriptorForFile();
   /*package*/ final ConceptDescriptor myConceptFolder = createDescriptorForFolder();
   /*package*/ final ConceptDescriptor myConceptGroup = createDescriptorForGroup();
+  /*package*/ final ConceptDescriptor myConceptGroupReference = createDescriptorForGroupReference();
+  /*package*/ final ConceptDescriptor myConceptITarget = createDescriptorForITarget();
   /*package*/ final ConceptDescriptor myConceptPermission = createDescriptorForPermission();
+  /*package*/ final ConceptDescriptor myConceptSetPermission = createDescriptorForSetPermission();
   /*package*/ final ConceptDescriptor myConceptSystem = createDescriptorForSystem();
   /*package*/ final ConceptDescriptor myConceptUser = createDescriptorForUser();
   /*package*/ final ConceptDescriptor myConceptUserList = createDescriptorForUserList();
-  /*package*/ final ConceptDescriptor myConceptUserPermission = createDescriptorForUserPermission();
   /*package*/ final ConceptDescriptor myConceptUserReference = createDescriptorForUserReference();
+  /*package*/ final EnumerationDescriptor myEnumerationallowdeny = new EnumerationDescriptor_allowdeny();
   private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
@@ -31,31 +37,38 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   public void reportDependencies(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.Dependencies deps) {
     deps.extendedLanguage(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, "jetbrains.mps.lang.core");
+    deps.aggregatedLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage");
   }
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptFolder, myConceptGroup, myConceptPermission, myConceptSystem, myConceptUser, myConceptUserList, myConceptUserPermission, myConceptUserReference);
+    return Arrays.asList(myConceptFile, myConceptFolder, myConceptGroup, myConceptGroupReference, myConceptITarget, myConceptPermission, myConceptSetPermission, myConceptSystem, myConceptUser, myConceptUserList, myConceptUserReference);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
     switch (myIndexSwitch.index(id)) {
+      case LanguageConceptSwitch.File:
+        return myConceptFile;
       case LanguageConceptSwitch.Folder:
         return myConceptFolder;
       case LanguageConceptSwitch.Group:
         return myConceptGroup;
+      case LanguageConceptSwitch.GroupReference:
+        return myConceptGroupReference;
+      case LanguageConceptSwitch.ITarget:
+        return myConceptITarget;
       case LanguageConceptSwitch.Permission:
         return myConceptPermission;
+      case LanguageConceptSwitch.SetPermission:
+        return myConceptSetPermission;
       case LanguageConceptSwitch.System:
         return myConceptSystem;
       case LanguageConceptSwitch.User:
         return myConceptUser;
       case LanguageConceptSwitch.UserList:
         return myConceptUserList;
-      case LanguageConceptSwitch.UserPermission:
-        return myConceptUserPermission;
       case LanguageConceptSwitch.UserReference:
         return myConceptUserReference;
       default:
@@ -63,11 +76,26 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     }
   }
 
+  @Override
+  public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
+    return Arrays.asList(myEnumerationallowdeny);
+  }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
   }
 
+  private static ConceptDescriptor createDescriptorForFile() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SysMod", "File", 0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca6d5215L);
+    b.class_(false, false, false);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.origin("r:5562c3fd-8bed-4a60-8efa-3bbd60a507f0(SysMod.structure)/4582300353800524309");
+    b.version(3);
+    b.aggregate("userpermissions", 0x3f9799e4ca6d5217L).target(0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca6051dfL).optional(true).ordered(true).multiple(true).origin("4582300353800524311").done();
+    b.aggregate("dir", 0x3f9799e4ca6d5218L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L).optional(false).ordered(true).multiple(false).origin("4582300353800524312").done();
+    b.alias("File");
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForFolder() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SysMod", "Folder", 0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca5f03a0L);
     b.class_(false, false, false);
@@ -75,6 +103,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:5562c3fd-8bed-4a60-8efa-3bbd60a507f0(SysMod.structure)/4582300353799586720");
     b.version(3);
     b.aggregate("userpermissions", 0x3f9799e4ca60cadeL).target(0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca6051dfL).optional(true).ordered(true).multiple(true).origin("4582300353799703262").done();
+    b.aggregate("dir", 0x3f9799e4ca6aad36L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L).optional(false).ordered(true).multiple(false).origin("4582300353800351030").done();
     b.alias("Folder");
     return b.create();
   }
@@ -88,14 +117,39 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.alias("Group");
     return b.create();
   }
+  private static ConceptDescriptor createDescriptorForGroupReference() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SysMod", "GroupReference", 0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca689dd2L);
+    b.class_(false, false, false);
+    b.parent(0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca69fd12L);
+    b.origin("r:5562c3fd-8bed-4a60-8efa-3bbd60a507f0(SysMod.structure)/4582300353800216018");
+    b.version(3);
+    b.associate("group", 0x3f9799e4ca689dd4L).target(0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca5f0017L).optional(false).origin("4582300353800216020").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForITarget() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SysMod", "ITarget", 0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca69fd12L);
+    b.interface_();
+    b.origin("r:5562c3fd-8bed-4a60-8efa-3bbd60a507f0(SysMod.structure)/4582300353800305938");
+    b.version(3);
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForPermission() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SysMod", "Permission", 0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca5f40c8L);
     b.class_(false, false, false);
     b.origin("r:5562c3fd-8bed-4a60-8efa-3bbd60a507f0(SysMod.structure)/4582300353799602376");
     b.version(3);
-    b.property("read", 0x3f9799e4ca5f40e3L).type(PrimitiveTypeId.BOOLEAN).origin("4582300353799602403").done();
-    b.property("write", 0x3f9799e4ca5f40e4L).type(PrimitiveTypeId.BOOLEAN).origin("4582300353799602404").done();
-    b.property("execute", 0x3f9799e4ca5f40e5L).type(PrimitiveTypeId.BOOLEAN).origin("4582300353799602405").done();
+    b.property("read", 0x3f9799e4ca5f40e3L).type(MetaIdFactory.dataTypeId(0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca6c05a8L)).origin("4582300353799602403").done();
+    b.property("write", 0x3f9799e4ca5f40e4L).type(MetaIdFactory.dataTypeId(0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca6c05a8L)).origin("4582300353799602404").done();
+    b.property("execute", 0x3f9799e4ca5f40e5L).type(MetaIdFactory.dataTypeId(0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca6c05a8L)).origin("4582300353799602405").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForSetPermission() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SysMod", "SetPermission", 0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca6051dfL);
+    b.class_(false, false, false);
+    b.origin("r:5562c3fd-8bed-4a60-8efa-3bbd60a507f0(SysMod.structure)/4582300353799672287");
+    b.version(3);
+    b.aggregate("target", 0x3f9799e4ca60cab6L).target(0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca69fd12L).optional(false).ordered(true).multiple(false).origin("4582300353799703222").done();
+    b.aggregate("permission", 0x3f9799e4ca60cab7L).target(0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca5f40c8L).optional(false).ordered(true).multiple(false).origin("4582300353799703223").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForSystem() {
@@ -106,6 +160,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(3);
     b.aggregate("groups", 0x3f9799e4ca5f40e6L).target(0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca5f0017L).optional(true).ordered(true).multiple(true).origin("4582300353799602406").done();
     b.aggregate("folders", 0x3f9799e4ca5f40e7L).target(0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca5f03a0L).optional(true).ordered(true).multiple(true).origin("4582300353799602407").done();
+    b.aggregate("file", 0x3f9799e4ca6d521bL).target(0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca6d5215L).optional(true).ordered(true).multiple(true).origin("4582300353800524315").done();
     b.alias("System");
     return b.create();
   }
@@ -125,18 +180,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("users", 0x3f9799e4ca5fa48dL).target(0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca5f03bcL).optional(true).ordered(true).multiple(true).origin("4582300353799627917").done();
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForUserPermission() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SysMod", "UserPermission", 0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca6051dfL);
-    b.class_(false, false, false);
-    b.origin("r:5562c3fd-8bed-4a60-8efa-3bbd60a507f0(SysMod.structure)/4582300353799672287");
-    b.version(3);
-    b.aggregate("user", 0x3f9799e4ca60cab6L).target(0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca6051e0L).optional(false).ordered(true).multiple(false).origin("4582300353799703222").done();
-    b.aggregate("permission", 0x3f9799e4ca60cab7L).target(0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca5f40c8L).optional(false).ordered(true).multiple(false).origin("4582300353799703223").done();
-    return b.create();
-  }
   private static ConceptDescriptor createDescriptorForUserReference() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SysMod", "UserReference", 0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca6051e0L);
     b.class_(false, false, false);
+    b.parent(0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca69fd12L);
     b.origin("r:5562c3fd-8bed-4a60-8efa-3bbd60a507f0(SysMod.structure)/4582300353799672288");
     b.version(3);
     b.associate("user", 0x3f9799e4ca6051e1L).target(0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca5f03bcL).optional(false).origin("4582300353799672289").done();

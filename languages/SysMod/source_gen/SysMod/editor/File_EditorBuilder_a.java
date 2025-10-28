@@ -40,11 +40,11 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SConcept;
 
-/*package*/ class Folder_EditorBuilder_a extends AbstractEditorBuilder {
+/*package*/ class File_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
   private SNode myNode;
 
-  public Folder_EditorBuilder_a(@NotNull EditorContext context, @NotNull SNode node) {
+  public File_EditorBuilder_a(@NotNull EditorContext context, @NotNull SNode node) {
     super(context);
     myNode = node;
   }
@@ -61,7 +61,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
 
   private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_ngx833_a");
+    editorCell.setCellId("Collection_jqfb9k_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
     editorCell.addEditorCell(createComponent_0());
@@ -100,7 +100,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
   }
   private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "{");
-    editorCell.setCellId("Constant_ngx833_c0");
+    editorCell.setCellId("Constant_jqfb9k_c0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.MATCHING_LABEL, "body-brace");
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -110,7 +110,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
   }
   private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "dir");
-    editorCell.setCellId("Constant_ngx833_d0");
+    editorCell.setCellId("Constant_jqfb9k_d0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     editorCell.getStyle().putAll(style);
@@ -118,14 +118,14 @@ import org.jetbrains.mps.openapi.language.SConcept;
     return editorCell;
   }
   private EditorCell createRefNode_0() {
-    SingleRoleCellProvider provider = new dirSingleRoleHandler_ngx833_e0(myNode, LINKS.dir$_Xy0, getEditorContext());
+    SingleRoleCellProvider provider = new dirSingleRoleHandler_jqfb9k_e0(myNode, LINKS.dir$yOGV, getEditorContext());
     return provider.createCell();
   }
-  private static class dirSingleRoleHandler_ngx833_e0 extends SingleRoleCellProvider {
+  private static class dirSingleRoleHandler_jqfb9k_e0 extends SingleRoleCellProvider {
     @NotNull
     private SNode myNode;
 
-    public dirSingleRoleHandler_ngx833_e0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+    public dirSingleRoleHandler_jqfb9k_e0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(containmentLink, context);
       myNode = ownerNode;
     }
@@ -138,8 +138,8 @@ import org.jetbrains.mps.openapi.language.SConcept;
 
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = getUpdateSession().updateChildNodeCell(child);
-      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), LINKS.dir$_Xy0, child));
-      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), LINKS.dir$_Xy0, child));
+      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), LINKS.dir$yOGV, child));
+      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), LINKS.dir$yOGV, child));
       installCellInfo(child, editorCell, false);
       return editorCell;
     }
@@ -151,7 +151,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
         editorCell.setSubstituteInfo((isEmpty ? new SEmptyContainmentSubstituteInfo(editorCell) : new SChildSubstituteInfo(editorCell)));
       }
       if (editorCell.getSRole() == null) {
-        editorCell.setSRole(LINKS.dir$_Xy0);
+        editorCell.setSRole(LINKS.dir$yOGV);
       }
       Style style = new StyleImpl();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -160,7 +160,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     @Override
     protected EditorCell createEmptyCell() {
       getCellFactory().pushCellContext();
-      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(getNode(), LINKS.dir$_Xy0));
+      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(getNode(), LINKS.dir$yOGV));
       try {
         EditorCell editorCell = super.createEmptyCell();
         editorCell.setCellId("empty_dir");
@@ -177,7 +177,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
   }
   private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_ngx833_f0");
+    editorCell.setCellId("Collection_jqfb9k_f0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     editorCell.getStyle().putAll(style);
@@ -185,7 +185,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     return editorCell;
   }
   private EditorCell createRefNodeList_0() {
-    AbstractCellListHandler handler = new userpermissionsListHandler_ngx833_a5a(myNode, getEditorContext());
+    AbstractCellListHandler handler = new userpermissionsListHandler_jqfb9k_a5a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_userpermissions");
     Style style = new StyleImpl();
@@ -196,11 +196,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
     editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
-  private static class userpermissionsListHandler_ngx833_a5a extends RefNodeListHandler {
+  private static class userpermissionsListHandler_jqfb9k_a5a extends RefNodeListHandler {
     @NotNull
     private SNode myNode;
 
-    public userpermissionsListHandler_ngx833_a5a(SNode ownerNode, EditorContext context) {
+    public userpermissionsListHandler_jqfb9k_a5a(SNode ownerNode, EditorContext context) {
       super(context, false);
       myNode = ownerNode;
     }
@@ -210,7 +210,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
       return myNode;
     }
     public SContainmentLink getSLink() {
-      return LINKS.userpermissions$fdrP;
+      return LINKS.userpermissions$yOtU;
     }
     public SAbstractConcept getChildSConcept() {
       return CONCEPTS.SetPermission$m7;
@@ -223,7 +223,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     }
     public EditorCell createEmptyCell() {
       getCellFactory().pushCellContext();
-      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(userpermissionsListHandler_ngx833_a5a.this.getNode(), LINKS.userpermissions$fdrP));
+      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(userpermissionsListHandler_jqfb9k_a5a.this.getNode(), LINKS.userpermissions$yOtU));
       try {
         EditorCell emptyCell = null;
         emptyCell = super.createEmptyCell();
@@ -265,7 +265,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
   }
   private EditorCell createConstant_2() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "}");
-    editorCell.setCellId("Constant_ngx833_g0");
+    editorCell.setCellId("Constant_jqfb9k_g0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.MATCHING_LABEL, "body-brace");
     editorCell.getStyle().putAll(style);
@@ -283,7 +283,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
   }
 
   private static final class LINKS {
-    /*package*/ static final SContainmentLink dir$_Xy0 = MetaAdapterFactory.getContainmentLink(0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca5f03a0L, 0x3f9799e4ca6aad36L, "dir");
-    /*package*/ static final SContainmentLink userpermissions$fdrP = MetaAdapterFactory.getContainmentLink(0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca5f03a0L, 0x3f9799e4ca60cadeL, "userpermissions");
+    /*package*/ static final SContainmentLink dir$yOGV = MetaAdapterFactory.getContainmentLink(0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca6d5215L, 0x3f9799e4ca6d5218L, "dir");
+    /*package*/ static final SContainmentLink userpermissions$yOtU = MetaAdapterFactory.getContainmentLink(0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca6d5215L, 0x3f9799e4ca6d5217L, "userpermissions");
   }
 }
