@@ -35,7 +35,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       case 7:
         return Collections.<ConceptEditor>singletonList(new SetPermission_Editor());
       case 8:
-        return Collections.<ConceptEditor>singletonList(new System_Editor());
+        return Collections.<ConceptEditor>singletonList(new SystemOp_Editor());
       case 9:
         return Collections.<ConceptEditor>singletonList(new User_Editor());
       case 10:

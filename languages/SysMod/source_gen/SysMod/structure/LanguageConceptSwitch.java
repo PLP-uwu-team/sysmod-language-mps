@@ -18,7 +18,7 @@ public final class LanguageConceptSwitch {
   public static final int Permission = 6;
   public static final int Root = 7;
   public static final int SetPermission = 8;
-  public static final int System = 9;
+  public static final int SystemOp = 9;
   public static final int User = 10;
   public static final int UserLike = 11;
   public static final int UserList = 12;
@@ -36,7 +36,7 @@ public final class LanguageConceptSwitch {
     builder.put(0x3f9799e4ca5f40c8L, Permission);
     builder.put(0x1031032eed056a08L, Root);
     builder.put(0x3f9799e4ca6051dfL, SetPermission);
-    builder.put(0x3f9799e4ca5efffbL, System);
+    builder.put(0x3f9799e4ca5efffbL, SystemOp);
     builder.put(0x3f9799e4ca5f03bcL, User);
     builder.put(0x1031032eed056a13L, UserLike);
     builder.put(0x3f9799e4ca5fa472L, UserList);

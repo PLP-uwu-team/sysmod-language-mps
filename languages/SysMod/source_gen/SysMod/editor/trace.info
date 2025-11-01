@@ -745,18 +745,18 @@
     </file>
   </root>
   <root nodeRef="r:a315c5e5-9c1b-480d-bb9d-332fc42615b1(SysMod.editor)/4582300353799602441">
-    <file name="System_Editor.java">
-      <node id="4582300353799602441" at="11,79,12,72" concept="6" />
+    <file name="SystemOp_Editor.java">
+      <node id="4582300353799602441" at="11,79,12,74" concept="6" />
       <node id="4582300353799602441" at="11,0,14,0" concept="4" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <scope id="4582300353799602441" at="11,79,12,72" />
+      <scope id="4582300353799602441" at="11,79,12,74" />
       <scope id="4582300353799602441" at="11,0,14,0">
         <var name="editorContext" id="4582300353799602441" />
         <var name="node" id="4582300353799602441" />
       </scope>
-      <unit id="4582300353799602441" at="10,0,15,0" name="SysMod.editor.System_Editor" />
+      <unit id="4582300353799602441" at="10,0,15,0" name="SysMod.editor.SystemOp_Editor" />
     </file>
-    <file name="System_EditorBuilder_a.java">
-      <node id="4582300353799602441" at="47,86,48,19" concept="9" />
+    <file name="SystemOp_EditorBuilder_a.java">
+      <node id="4582300353799602441" at="47,88,48,19" concept="9" />
       <node id="4582300353799602441" at="48,19,49,18" concept="1" />
       <node id="4582300353799602441" at="54,26,55,18" concept="6" />
       <node id="4582300353799602441" at="58,39,59,32" concept="6" />
@@ -964,21 +964,21 @@
       <node id="4582300353799602441" at="362,0,365,0" concept="4" trace="getSLink#()Lorg/jetbrains/mps/openapi/language/SContainmentLink;" />
       <node id="4582300353799602441" at="365,0,368,0" concept="4" trace="getChildSConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="4582300353799602441" at="409,96,412,9" concept="3" />
-      <node id="4582300353799602441" at="47,0,51,0" concept="0" trace="System_EditorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="4582300353799602441" at="47,0,51,0" concept="0" trace="SystemOp_EditorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="4582300353799602534" at="74,0,78,0" concept="4" trace="createComponent_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="4582300353799602441" at="121,0,125,0" concept="4" trace="createRefNode_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="4582300353799602441" at="129,0,133,0" concept="0" trace="defgroupSingleRoleHandler_dmikla_a3a#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SContainmentLink;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-      <node id="4582300353799602441" at="196,0,200,0" concept="0" trace="usersListHandler_dmikla_b3a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="4582300353799602441" at="129,0,133,0" concept="0" trace="defgroupSingleRoleHandler_kzt72m_a3a#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SContainmentLink;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="4582300353799602441" at="196,0,200,0" concept="0" trace="usersListHandler_kzt72m_b3a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="4582300353799602441" at="201,0,205,0" concept="4" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="4582300353799602441" at="234,97,238,9" concept="3" />
       <node id="4582300353799602441" at="240,95,244,9" concept="3" />
       <node id="4582300353799602441" at="246,74,250,9" concept="3" />
-      <node id="4582300353799602441" at="275,0,279,0" concept="0" trace="foldersListHandler_dmikla_c3a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="4582300353799602441" at="275,0,279,0" concept="0" trace="foldersListHandler_kzt72m_c3a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="4582300353799602441" at="280,0,284,0" concept="4" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="4582300353799602441" at="313,97,317,9" concept="3" />
       <node id="4582300353799602441" at="319,95,323,9" concept="3" />
       <node id="4582300353799602441" at="325,74,329,9" concept="3" />
-      <node id="4582300353799602441" at="353,0,357,0" concept="0" trace="fileListHandler_dmikla_d3a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="4582300353799602441" at="353,0,357,0" concept="0" trace="fileListHandler_kzt72m_d3a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="4582300353799602441" at="358,0,362,0" concept="4" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="4582300353799602441" at="391,97,395,9" concept="3" />
       <node id="4582300353799602441" at="397,95,401,9" concept="3" />
@@ -1046,7 +1046,7 @@
       <scope id="4582300353799602441" at="365,48,366,30" />
       <scope id="4582300353799602441" at="383,17,384,42" />
       <scope id="4582300353799602441" at="410,34,411,91" />
-      <scope id="4582300353799602441" at="47,86,49,18" />
+      <scope id="4582300353799602441" at="47,88,49,18" />
       <scope id="4582300353799602534" at="74,42,76,22">
         <var name="editorCell" id="4582300353799602534" />
       </scope>
@@ -1232,14 +1232,14 @@
         <var name="elementNode" id="4582300353799602441" />
         <var name="isEmptyCell" id="4582300353799602441" />
       </scope>
-      <unit id="4582300353799602441" at="426,0,429,0" name="SysMod.editor.System_EditorBuilder_a$PROPS" />
-      <unit id="4582300353799602441" at="430,0,436,0" name="SysMod.editor.System_EditorBuilder_a$CONCEPTS" />
-      <unit id="4582300353799602441" at="437,0,443,0" name="SysMod.editor.System_EditorBuilder_a$LINKS" />
-      <unit id="4582300353799602441" at="125,0,180,0" name="SysMod.editor.System_EditorBuilder_a$defgroupSingleRoleHandler_dmikla_a3a" />
-      <unit id="4582300353799602441" at="192,0,259,0" name="SysMod.editor.System_EditorBuilder_a$usersListHandler_dmikla_b3a" />
-      <unit id="4582300353799602441" at="271,0,338,0" name="SysMod.editor.System_EditorBuilder_a$foldersListHandler_dmikla_c3a" />
-      <unit id="4582300353799602441" at="349,0,416,0" name="SysMod.editor.System_EditorBuilder_a$fileListHandler_dmikla_d3a" />
-      <unit id="4582300353799602441" at="43,0,444,0" name="SysMod.editor.System_EditorBuilder_a" />
+      <unit id="4582300353799602441" at="426,0,429,0" name="SysMod.editor.SystemOp_EditorBuilder_a$PROPS" />
+      <unit id="4582300353799602441" at="430,0,436,0" name="SysMod.editor.SystemOp_EditorBuilder_a$CONCEPTS" />
+      <unit id="4582300353799602441" at="437,0,443,0" name="SysMod.editor.SystemOp_EditorBuilder_a$LINKS" />
+      <unit id="4582300353799602441" at="125,0,180,0" name="SysMod.editor.SystemOp_EditorBuilder_a$defgroupSingleRoleHandler_kzt72m_a3a" />
+      <unit id="4582300353799602441" at="192,0,259,0" name="SysMod.editor.SystemOp_EditorBuilder_a$usersListHandler_kzt72m_b3a" />
+      <unit id="4582300353799602441" at="271,0,338,0" name="SysMod.editor.SystemOp_EditorBuilder_a$foldersListHandler_kzt72m_c3a" />
+      <unit id="4582300353799602441" at="349,0,416,0" name="SysMod.editor.SystemOp_EditorBuilder_a$fileListHandler_kzt72m_d3a" />
+      <unit id="4582300353799602441" at="43,0,444,0" name="SysMod.editor.SystemOp_EditorBuilder_a" />
     </file>
   </root>
   <root nodeRef="r:a315c5e5-9c1b-480d-bb9d-332fc42615b1(SysMod.editor)/4582300353799627918">

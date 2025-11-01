@@ -37,7 +37,7 @@
         <property id="4582300353799602405" name="execute" index="3PMd$1" />
         <property id="4582300353799602403" name="read" index="3PMd$7" />
       </concept>
-      <concept id="4582300353799585787" name="SysMod.structure.System" flags="ng" index="3PMmov">
+      <concept id="4582300353799585787" name="SysMod.structure.SystemOp" flags="ng" index="3PMmov">
         <child id="4582300353799602407" name="folders" index="3PMd$3" />
         <child id="4582300353800524315" name="file" index="3PYGJZ" />
         <child id="1166717278545192053" name="users" index="3WNytr" />
@@ -98,13 +98,23 @@
     <node concept="3PM9D4" id="10L0MVH1zjs" role="3PMd$3">
       <property role="TrG5h" value="frry" />
       <node concept="3PXWwV" id="10L0MVH1zjM" role="3PXPcU">
-        <node concept="3PXWw4" id="10L0MVH1zjP" role="3PXPdi">
-          <ref role="3PXWw5" node="10L0MVGZYMA" resolve="baba" />
-        </node>
         <node concept="3PMd$G" id="10L0MVH1zjO" role="3PXPdj">
           <property role="3PMd$7" value="3YnAujar0mD/allow" />
           <property role="3PMd$0" value="3YnAujar0mD/allow" />
           <property role="3PMd$1" value="3YnAujar0mD/allow" />
+        </node>
+        <node concept="3PZKgQ" id="10L0MVHa$sj" role="3PXPdi">
+          <ref role="3PZKgK" node="10L0MVGZYM_" resolve="furry" />
+        </node>
+      </node>
+      <node concept="3PXWwV" id="10L0MVHa$sl" role="3PXPcU">
+        <node concept="3PXWw4" id="10L0MVHa$so" role="3PXPdi">
+          <ref role="3PXWw5" node="10L0MVH0$gm" resolve="arney" />
+        </node>
+        <node concept="3PMd$G" id="10L0MVHa$sn" role="3PXPdj">
+          <property role="3PMd$7" value="3YnAujar0mE/deny" />
+          <property role="3PMd$0" value="3YnAujar0mE/deny" />
+          <property role="3PMd$1" value="3YnAujar0mE/deny" />
         </node>
       </node>
       <node concept="Xl_RD" id="10L0MVH1zjt" role="3PZjji">
@@ -180,6 +190,9 @@
         <property role="TrG5h" value="teachers" />
       </node>
     </node>
+  </node>
+  <node concept="3PMmov" id="10L0MVH3bAR">
+    <property role="TrG5h" value="yes" />
   </node>
 </model>
 

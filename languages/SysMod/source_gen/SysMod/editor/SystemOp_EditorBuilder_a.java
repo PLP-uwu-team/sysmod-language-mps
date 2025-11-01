@@ -40,11 +40,11 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SConcept;
 
-/*package*/ class System_EditorBuilder_a extends AbstractEditorBuilder {
+/*package*/ class SystemOp_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
   private SNode myNode;
 
-  public System_EditorBuilder_a(@NotNull EditorContext context, @NotNull SNode node) {
+  public SystemOp_EditorBuilder_a(@NotNull EditorContext context, @NotNull SNode node) {
     super(context);
     myNode = node;
   }
@@ -61,7 +61,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
 
   private EditorCell createCollection_0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_dmikla_a");
+    editorCell.setCellId("Collection_kzt72m_a");
     editorCell.setBig(true);
     setCellContext(editorCell);
     editorCell.addEditorCell(createComponent_0());
@@ -98,7 +98,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
   }
   private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "{");
-    editorCell.setCellId("Constant_dmikla_c0");
+    editorCell.setCellId("Constant_kzt72m_c0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.MATCHING_LABEL, "body-brace");
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -108,7 +108,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
   }
   private EditorCell createCollection_1() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_dmikla_d0");
+    editorCell.setCellId("Collection_kzt72m_d0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     editorCell.getStyle().putAll(style);
@@ -119,14 +119,14 @@ import org.jetbrains.mps.openapi.language.SConcept;
     return editorCell;
   }
   private EditorCell createRefNode_0() {
-    SingleRoleCellProvider provider = new defgroupSingleRoleHandler_dmikla_a3a(myNode, LINKS.defgroup$aHkz, getEditorContext());
+    SingleRoleCellProvider provider = new defgroupSingleRoleHandler_kzt72m_a3a(myNode, LINKS.defgroup$aHkz, getEditorContext());
     return provider.createCell();
   }
-  private static class defgroupSingleRoleHandler_dmikla_a3a extends SingleRoleCellProvider {
+  private static class defgroupSingleRoleHandler_kzt72m_a3a extends SingleRoleCellProvider {
     @NotNull
     private SNode myNode;
 
-    public defgroupSingleRoleHandler_dmikla_a3a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+    public defgroupSingleRoleHandler_kzt72m_a3a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(containmentLink, context);
       myNode = ownerNode;
     }
@@ -178,7 +178,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     }
   }
   private EditorCell createRefNodeList_0() {
-    AbstractCellListHandler handler = new usersListHandler_dmikla_b3a(myNode, getEditorContext());
+    AbstractCellListHandler handler = new usersListHandler_kzt72m_b3a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_users");
     Style style = new StyleImpl();
@@ -189,11 +189,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
     editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
-  private static class usersListHandler_dmikla_b3a extends RefNodeListHandler {
+  private static class usersListHandler_kzt72m_b3a extends RefNodeListHandler {
     @NotNull
     private SNode myNode;
 
-    public usersListHandler_dmikla_b3a(SNode ownerNode, EditorContext context) {
+    public usersListHandler_kzt72m_b3a(SNode ownerNode, EditorContext context) {
       super(context, false);
       myNode = ownerNode;
     }
@@ -216,7 +216,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     }
     public EditorCell createEmptyCell() {
       getCellFactory().pushCellContext();
-      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(usersListHandler_dmikla_b3a.this.getNode(), LINKS.users$n_p_));
+      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(usersListHandler_kzt72m_b3a.this.getNode(), LINKS.users$n_p_));
       try {
         EditorCell emptyCell = null;
         emptyCell = super.createEmptyCell();
@@ -257,7 +257,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     }
   }
   private EditorCell createRefNodeList_1() {
-    AbstractCellListHandler handler = new foldersListHandler_dmikla_c3a(myNode, getEditorContext());
+    AbstractCellListHandler handler = new foldersListHandler_kzt72m_c3a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_folders");
     Style style = new StyleImpl();
@@ -268,11 +268,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
     editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
-  private static class foldersListHandler_dmikla_c3a extends RefNodeListHandler {
+  private static class foldersListHandler_kzt72m_c3a extends RefNodeListHandler {
     @NotNull
     private SNode myNode;
 
-    public foldersListHandler_dmikla_c3a(SNode ownerNode, EditorContext context) {
+    public foldersListHandler_kzt72m_c3a(SNode ownerNode, EditorContext context) {
       super(context, false);
       myNode = ownerNode;
     }
@@ -295,7 +295,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     }
     public EditorCell createEmptyCell() {
       getCellFactory().pushCellContext();
-      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(foldersListHandler_dmikla_c3a.this.getNode(), LINKS.folders$G_zy));
+      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(foldersListHandler_kzt72m_c3a.this.getNode(), LINKS.folders$G_zy));
       try {
         EditorCell emptyCell = null;
         emptyCell = super.createEmptyCell();
@@ -336,7 +336,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     }
   }
   private EditorCell createRefNodeList_2() {
-    AbstractCellListHandler handler = new fileListHandler_dmikla_d3a(myNode, getEditorContext());
+    AbstractCellListHandler handler = new fileListHandler_kzt72m_d3a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_file");
     Style style = new StyleImpl();
@@ -346,11 +346,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
     editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
-  private static class fileListHandler_dmikla_d3a extends RefNodeListHandler {
+  private static class fileListHandler_kzt72m_d3a extends RefNodeListHandler {
     @NotNull
     private SNode myNode;
 
-    public fileListHandler_dmikla_d3a(SNode ownerNode, EditorContext context) {
+    public fileListHandler_kzt72m_d3a(SNode ownerNode, EditorContext context) {
       super(context, false);
       myNode = ownerNode;
     }
@@ -373,7 +373,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     }
     public EditorCell createEmptyCell() {
       getCellFactory().pushCellContext();
-      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(fileListHandler_dmikla_d3a.this.getNode(), LINKS.file$SnF0));
+      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(fileListHandler_kzt72m_d3a.this.getNode(), LINKS.file$SnF0));
       try {
         EditorCell emptyCell = null;
         emptyCell = super.createEmptyCell();
@@ -415,7 +415,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
   }
   private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "}");
-    editorCell.setCellId("Constant_dmikla_e0");
+    editorCell.setCellId("Constant_kzt72m_e0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.MATCHING_LABEL, "body-brace");
     editorCell.getStyle().putAll(style);

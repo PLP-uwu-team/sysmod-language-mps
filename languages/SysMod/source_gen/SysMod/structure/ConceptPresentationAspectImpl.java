@@ -18,7 +18,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_Permission;
   private ConceptPresentation props_Root;
   private ConceptPresentation props_SetPermission;
-  private ConceptPresentation props_System;
+  private ConceptPresentation props_SystemOp;
   private ConceptPresentation props_User;
   private ConceptPresentation props_UserLike;
   private ConceptPresentation props_UserList;
@@ -92,13 +92,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_SetPermission = cpb.create();
         }
         return props_SetPermission;
-      case LanguageConceptSwitch.System:
-        if (props_System == null) {
+      case LanguageConceptSwitch.SystemOp:
+        if (props_SystemOp == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          props_System = cpb.create();
+          props_SystemOp = cpb.create();
         }
-        return props_System;
+        return props_SystemOp;
       case LanguageConceptSwitch.User:
         if (props_User == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
