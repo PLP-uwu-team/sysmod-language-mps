@@ -16,12 +16,14 @@ public final class LanguageConceptSwitch {
   public static final int GroupReference = 4;
   public static final int ITarget = 5;
   public static final int Permission = 6;
-  public static final int SetPermission = 7;
-  public static final int System = 8;
-  public static final int User = 9;
-  public static final int UserList = 10;
-  public static final int UserReference = 11;
-  public static final int UserReferenceList = 12;
+  public static final int Root = 7;
+  public static final int SetPermission = 8;
+  public static final int System = 9;
+  public static final int User = 10;
+  public static final int UserLike = 11;
+  public static final int UserList = 12;
+  public static final int UserReference = 13;
+  public static final int UserReferenceList = 14;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x248c097d53364d24L, 0x9241611e979642dbL);
@@ -32,9 +34,11 @@ public final class LanguageConceptSwitch {
     builder.put(0x3f9799e4ca689dd2L, GroupReference);
     builder.put(0x3f9799e4ca69fd12L, ITarget);
     builder.put(0x3f9799e4ca5f40c8L, Permission);
+    builder.put(0x1031032eed056a08L, Root);
     builder.put(0x3f9799e4ca6051dfL, SetPermission);
     builder.put(0x3f9799e4ca5efffbL, System);
     builder.put(0x3f9799e4ca5f03bcL, User);
+    builder.put(0x1031032eed056a13L, UserLike);
     builder.put(0x3f9799e4ca5fa472L, UserList);
     builder.put(0x3f9799e4ca6051e0L, UserReference);
     builder.put(0x1031032eecfbf14bL, UserReferenceList);

@@ -53,6 +53,8 @@
       <concept id="4582300353800524309" name="SysMod.structure.File" flags="ng" index="3PYGJL">
         <child id="4582300353800524311" name="userpermissions" index="3PYGJN" />
         <child id="4582300353800524312" name="dir" index="3PYGJW" />
+        <child id="1166717278545447854" name="group" index="3Xcwy0" />
+        <child id="1166717278545447853" name="owner" index="3Xcwy3" />
       </concept>
       <concept id="4582300353800216018" name="SysMod.structure.GroupReference" flags="ng" index="3PZKgQ">
         <reference id="4582300353800216020" name="group" index="3PZKgK" />
@@ -60,60 +62,61 @@
       <concept id="1166717278545140944" name="SysMod.structure.DefGroup" flags="ng" index="3WNPZY">
         <child id="1166717278545140950" name="groups" index="3WNPZS" />
       </concept>
+      <concept id="1166717278545603080" name="SysMod.structure.Root" flags="ng" index="3Xd6$A" />
     </language>
   </registry>
   <node concept="3PMmov" id="10L0MVGZYMs">
     <property role="TrG5h" value="Debian13" />
-    <node concept="3PYGJL" id="10L0MVH0$hb" role="3PYGJZ">
-      <property role="TrG5h" value="secret-code" />
-      <node concept="3PXWwV" id="10L0MVH0$hs" role="3PYGJN">
-        <node concept="3PZKgQ" id="10L0MVH0$hv" role="3PXPdi">
+    <node concept="3PYGJL" id="10L0MVH1JWP" role="3PYGJZ">
+      <property role="TrG5h" value="secret_codes" />
+      <node concept="3PXWwV" id="10L0MVH1WFU" role="3PYGJN">
+        <node concept="3PZKgQ" id="10L0MVH1WFX" role="3PXPdi">
           <ref role="3PZKgK" node="10L0MVGZYM$" resolve="dev" />
         </node>
-        <node concept="3PMd$G" id="10L0MVH0$hu" role="3PXPdj">
+        <node concept="3PMd$G" id="10L0MVH1WFW" role="3PXPdj">
           <property role="3PMd$7" value="3YnAujar0mD/allow" />
           <property role="3PMd$0" value="3YnAujar0mD/allow" />
           <property role="3PMd$1" value="3YnAujar0mD/allow" />
         </node>
       </node>
-      <node concept="3PXWwV" id="10L0MVH0$hx" role="3PYGJN">
-        <node concept="3PZKgQ" id="10L0MVH0$h$" role="3PXPdi">
-          <ref role="3PZKgK" node="10L0MVGZYM_" resolve="furry" />
+      <node concept="3PXWwV" id="10L0MVH1WFZ" role="3PYGJN">
+        <node concept="3PXWw4" id="10L0MVH1WG2" role="3PXPdi">
+          <ref role="3PXWw5" node="10L0MVGZYMA" resolve="baba" />
         </node>
-        <node concept="3PMd$G" id="10L0MVH0$hz" role="3PXPdj">
+        <node concept="3PMd$G" id="10L0MVH1WG1" role="3PXPdj">
           <property role="3PMd$7" value="3YnAujar0mE/deny" />
           <property role="3PMd$0" value="3YnAujar0mE/deny" />
           <property role="3PMd$1" value="3YnAujar0mE/deny" />
         </node>
       </node>
-      <node concept="Xl_RD" id="10L0MVH0$hc" role="3PYGJW">
-        <property role="Xl_RC" value="/.env" />
+      <node concept="Xl_RD" id="10L0MVH1JWQ" role="3PYGJW">
+        <property role="Xl_RC" value="/secret/codes.txt" />
       </node>
+      <node concept="3Xd6$A" id="10L0MVH1JX5" role="3Xcwy3" />
+      <node concept="3Xd6$A" id="10L0MVH1WFS" role="3Xcwy0" />
     </node>
-    <node concept="3PM9D4" id="10L0MVH0$g8" role="3PMd$3">
-      <property role="TrG5h" value="furry_secret" />
-      <node concept="3PXWwV" id="10L0MVH0$h4" role="3PXPcU">
-        <node concept="3PXWw4" id="10L0MVH0$h9" role="3PXPdi">
+    <node concept="3PM9D4" id="10L0MVH1zjs" role="3PMd$3">
+      <property role="TrG5h" value="frry" />
+      <node concept="3PXWwV" id="10L0MVH1zjM" role="3PXPcU">
+        <node concept="3PXWw4" id="10L0MVH1zjP" role="3PXPdi">
           <ref role="3PXWw5" node="10L0MVGZYMA" resolve="baba" />
         </node>
-        <node concept="3PMd$G" id="10L0MVH0$h6" role="3PXPdj">
+        <node concept="3PMd$G" id="10L0MVH1zjO" role="3PXPdj">
           <property role="3PMd$7" value="3YnAujar0mD/allow" />
           <property role="3PMd$0" value="3YnAujar0mD/allow" />
           <property role="3PMd$1" value="3YnAujar0mD/allow" />
         </node>
       </node>
-      <node concept="Xl_RD" id="10L0MVH0$g9" role="3PZjji">
-        <property role="Xl_RC" value="/nope/furry/" />
+      <node concept="Xl_RD" id="10L0MVH1zjt" role="3PZjji">
+        <property role="Xl_RC" value="/furry" />
       </node>
-      <node concept="3clFbT" id="10L0MVH0$ga" role="3WNPY4">
+      <node concept="3clFbT" id="10L0MVH1zju" role="3WNPY4">
         <property role="3clFbU" value="true" />
       </node>
-      <node concept="Xl_RD" id="10L0MVH0$gb" role="3WNPTN">
-        <property role="Xl_RC" value="baba" />
-      </node>
-      <node concept="3PXWw4" id="10L0MVH0$h7" role="3WNPTK">
+      <node concept="3PXWw4" id="10L0MVH1zjH" role="3WNPTK">
         <ref role="3PXWw5" node="10L0MVGZYMA" resolve="baba" />
       </node>
+      <node concept="3Xd6$A" id="10L0MVH1JWN" role="3WNPTN" />
     </node>
     <node concept="3PM9Do" id="10L0MVGZYMA" role="3WNytr">
       <property role="TrG5h" value="baba" />

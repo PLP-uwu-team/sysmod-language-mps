@@ -16,9 +16,11 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_GroupReference;
   private ConceptPresentation props_ITarget;
   private ConceptPresentation props_Permission;
+  private ConceptPresentation props_Root;
   private ConceptPresentation props_SetPermission;
   private ConceptPresentation props_System;
   private ConceptPresentation props_User;
+  private ConceptPresentation props_UserLike;
   private ConceptPresentation props_UserList;
   private ConceptPresentation props_UserReference;
   private ConceptPresentation props_UserReferenceList;
@@ -76,6 +78,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Permission = cpb.create();
         }
         return props_Permission;
+      case LanguageConceptSwitch.Root:
+        if (props_Root == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Root");
+          props_Root = cpb.create();
+        }
+        return props_Root;
       case LanguageConceptSwitch.SetPermission:
         if (props_SetPermission == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -97,6 +106,12 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_User = cpb.create();
         }
         return props_User;
+      case LanguageConceptSwitch.UserLike:
+        if (props_UserLike == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_UserLike = cpb.create();
+        }
+        return props_UserLike;
       case LanguageConceptSwitch.UserList:
         if (props_UserList == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
