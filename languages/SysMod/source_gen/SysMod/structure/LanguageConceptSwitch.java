@@ -9,20 +9,23 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public final class LanguageConceptSwitch {
   private final LanguageConceptIndex myIndex;
-  public static final int File = 0;
-  public static final int Folder = 1;
-  public static final int Group = 2;
-  public static final int GroupReference = 3;
-  public static final int ITarget = 4;
-  public static final int Permission = 5;
-  public static final int SetPermission = 6;
-  public static final int System = 7;
-  public static final int User = 8;
-  public static final int UserList = 9;
-  public static final int UserReference = 10;
+  public static final int DefGroup = 0;
+  public static final int File = 1;
+  public static final int Folder = 2;
+  public static final int Group = 3;
+  public static final int GroupReference = 4;
+  public static final int ITarget = 5;
+  public static final int Permission = 6;
+  public static final int SetPermission = 7;
+  public static final int System = 8;
+  public static final int User = 9;
+  public static final int UserList = 10;
+  public static final int UserReference = 11;
+  public static final int UserReferenceList = 12;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x248c097d53364d24L, 0x9241611e979642dbL);
+    builder.put(0x1031032eecfe5cd0L, DefGroup);
     builder.put(0x3f9799e4ca6d5215L, File);
     builder.put(0x3f9799e4ca5f03a0L, Folder);
     builder.put(0x3f9799e4ca5f0017L, Group);
@@ -34,6 +37,7 @@ public final class LanguageConceptSwitch {
     builder.put(0x3f9799e4ca5f03bcL, User);
     builder.put(0x3f9799e4ca5fa472L, UserList);
     builder.put(0x3f9799e4ca6051e0L, UserReference);
+    builder.put(0x1031032eecfbf14bL, UserReferenceList);
     myIndex = builder.seal();
   }
 

@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
+  /*package*/ final ConceptDescriptor myConceptDefGroup = createDescriptorForDefGroup();
   /*package*/ final ConceptDescriptor myConceptFile = createDescriptorForFile();
   /*package*/ final ConceptDescriptor myConceptFolder = createDescriptorForFolder();
   /*package*/ final ConceptDescriptor myConceptGroup = createDescriptorForGroup();
@@ -26,6 +27,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptUser = createDescriptorForUser();
   /*package*/ final ConceptDescriptor myConceptUserList = createDescriptorForUserList();
   /*package*/ final ConceptDescriptor myConceptUserReference = createDescriptorForUserReference();
+  /*package*/ final ConceptDescriptor myConceptUserReferenceList = createDescriptorForUserReferenceList();
   /*package*/ final EnumerationDescriptor myEnumerationallowdeny = new EnumerationDescriptor_allowdeny();
   private final LanguageConceptSwitch myIndexSwitch;
 
@@ -42,13 +44,15 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptFile, myConceptFolder, myConceptGroup, myConceptGroupReference, myConceptITarget, myConceptPermission, myConceptSetPermission, myConceptSystem, myConceptUser, myConceptUserList, myConceptUserReference);
+    return Arrays.asList(myConceptDefGroup, myConceptFile, myConceptFolder, myConceptGroup, myConceptGroupReference, myConceptITarget, myConceptPermission, myConceptSetPermission, myConceptSystem, myConceptUser, myConceptUserList, myConceptUserReference, myConceptUserReferenceList);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
     switch (myIndexSwitch.index(id)) {
+      case LanguageConceptSwitch.DefGroup:
+        return myConceptDefGroup;
       case LanguageConceptSwitch.File:
         return myConceptFile;
       case LanguageConceptSwitch.Folder:
@@ -71,6 +75,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptUserList;
       case LanguageConceptSwitch.UserReference:
         return myConceptUserReference;
+      case LanguageConceptSwitch.UserReferenceList:
+        return myConceptUserReferenceList;
       default:
         return null;
     }
@@ -85,6 +91,15 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     return myIndexSwitch.index(c);
   }
 
+  private static ConceptDescriptor createDescriptorForDefGroup() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SysMod", "DefGroup", 0x248c097d53364d24L, 0x9241611e979642dbL, 0x1031032eecfe5cd0L);
+    b.class_(false, false, false);
+    b.origin("r:5562c3fd-8bed-4a60-8efa-3bbd60a507f0(SysMod.structure)/1166717278545140944");
+    b.version(3);
+    b.aggregate("groups", 0x1031032eecfe5cd6L).target(0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca5f0017L).optional(true).ordered(true).multiple(true).origin("1166717278545140950").done();
+    b.alias("Groups");
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForFile() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SysMod", "File", 0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca6d5215L);
     b.class_(false, false, false);
@@ -104,6 +119,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(3);
     b.aggregate("userpermissions", 0x3f9799e4ca60cadeL).target(0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca6051dfL).optional(true).ordered(true).multiple(true).origin("4582300353799703262").done();
     b.aggregate("dir", 0x3f9799e4ca6aad36L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L).optional(false).ordered(true).multiple(false).origin("4582300353800351030").done();
+    b.aggregate("recursive", 0x1031032eecfe5caaL).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L).optional(false).ordered(true).multiple(false).origin("1166717278545140906").done();
+    b.aggregate("owner", 0x1031032eecfe5d5dL).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L).optional(false).ordered(true).multiple(false).origin("1166717278545141085").done();
+    b.aggregate("group", 0x1031032eecfe5d5eL).target(0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca69fd12L).optional(false).ordered(true).multiple(false).origin("1166717278545141086").done();
     b.alias("Folder");
     return b.create();
   }
@@ -113,7 +131,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:5562c3fd-8bed-4a60-8efa-3bbd60a507f0(SysMod.structure)/4582300353799585815");
     b.version(3);
-    b.aggregate("users", 0x3f9799e4ca5fa471L).target(0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca5fa472L).optional(true).ordered(true).multiple(false).origin("4582300353799627889").done();
     b.alias("Group");
     return b.create();
   }
@@ -158,10 +175,11 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:5562c3fd-8bed-4a60-8efa-3bbd60a507f0(SysMod.structure)/4582300353799585787");
     b.version(3);
-    b.aggregate("groups", 0x3f9799e4ca5f40e6L).target(0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca5f0017L).optional(true).ordered(true).multiple(true).origin("4582300353799602406").done();
+    b.aggregate("defgroup", 0x1031032eecfe5d4aL).target(0x248c097d53364d24L, 0x9241611e979642dbL, 0x1031032eecfe5cd0L).optional(true).ordered(true).multiple(false).origin("1166717278545141066").done();
+    b.aggregate("users", 0x1031032eecff2475L).target(0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca5f03bcL).optional(true).ordered(true).multiple(true).origin("1166717278545192053").done();
     b.aggregate("folders", 0x3f9799e4ca5f40e7L).target(0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca5f03a0L).optional(true).ordered(true).multiple(true).origin("4582300353799602407").done();
     b.aggregate("file", 0x3f9799e4ca6d521bL).target(0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca6d5215L).optional(true).ordered(true).multiple(true).origin("4582300353800524315").done();
-    b.alias("System");
+    b.alias("SystemOperation");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForUser() {
@@ -170,6 +188,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:5562c3fd-8bed-4a60-8efa-3bbd60a507f0(SysMod.structure)/4582300353799586748");
     b.version(3);
+    b.aggregate("home", 0x1031032eecfe5cefL).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L).optional(false).ordered(true).multiple(false).origin("1166717278545140975").done();
+    b.aggregate("groups", 0x1031032eecfe5cf0L).target(0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca689dd2L).optional(true).ordered(true).multiple(true).origin("1166717278545140976").done();
+    b.alias("User");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForUserList() {
@@ -187,6 +208,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:5562c3fd-8bed-4a60-8efa-3bbd60a507f0(SysMod.structure)/4582300353799672288");
     b.version(3);
     b.associate("user", 0x3f9799e4ca6051e1L).target(0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca5f03bcL).optional(false).origin("4582300353799672289").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForUserReferenceList() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SysMod", "UserReferenceList", 0x248c097d53364d24L, 0x9241611e979642dbL, 0x1031032eecfbf14bL);
+    b.class_(false, false, false);
+    b.origin("r:5562c3fd-8bed-4a60-8efa-3bbd60a507f0(SysMod.structure)/1166717278544982347");
+    b.version(3);
+    b.aggregate("users", 0x1031032eecfbf14cL).target(0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca6051e0L).optional(true).ordered(true).multiple(true).origin("1166717278544982348").done();
     return b.create();
   }
 }

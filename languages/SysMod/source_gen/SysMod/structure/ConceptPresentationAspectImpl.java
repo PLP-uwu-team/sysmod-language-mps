@@ -9,6 +9,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
+  private ConceptPresentation props_DefGroup;
   private ConceptPresentation props_File;
   private ConceptPresentation props_Folder;
   private ConceptPresentation props_Group;
@@ -20,12 +21,20 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_User;
   private ConceptPresentation props_UserList;
   private ConceptPresentation props_UserReference;
+  private ConceptPresentation props_UserReferenceList;
 
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.DefGroup:
+        if (props_DefGroup == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Groups");
+          props_DefGroup = cpb.create();
+        }
+        return props_DefGroup;
       case LanguageConceptSwitch.File:
         if (props_File == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -102,6 +111,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_UserReference = cpb.create();
         }
         return props_UserReference;
+      case LanguageConceptSwitch.UserReferenceList:
+        if (props_UserReferenceList == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("UserReferenceList");
+          props_UserReferenceList = cpb.create();
+        }
+        return props_UserReferenceList;
     }
     return null;
   }

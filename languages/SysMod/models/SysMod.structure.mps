@@ -56,14 +56,20 @@
     <property role="EcuMT" value="4582300353799585787" />
     <property role="TrG5h" value="System" />
     <property role="19KtqR" value="true" />
-    <property role="34LRSv" value="System" />
+    <property role="34LRSv" value="SystemOperation" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="3YnAujanO3A" role="1TKVEi">
-      <property role="IQ2ns" value="4582300353799602406" />
+    <node concept="1TJgyj" id="10L0MVGZ_Pa" role="1TKVEi">
+      <property role="IQ2ns" value="1166717278545141066" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="groups" />
+      <property role="20kJfa" value="defgroup" />
+      <ref role="20lvS9" node="10L0MVGZ_Ng" resolve="DefGroup" />
+    </node>
+    <node concept="1TJgyj" id="10L0MVGZMhP" role="1TKVEi">
+      <property role="IQ2ns" value="1166717278545192053" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="users" />
       <property role="20lbJX" value="fLJekj5/_0__n" />
-      <ref role="20lvS9" node="3YnAujanK0n" resolve="Group" />
+      <ref role="20lvS9" node="3YnAujanKeW" resolve="User" />
     </node>
     <node concept="1TJgyj" id="3YnAujanO3B" role="1TKVEi">
       <property role="IQ2ns" value="4582300353799602407" />
@@ -91,12 +97,6 @@
     <node concept="PrWs8" id="3YnAujanKev" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
-    <node concept="1TJgyj" id="3YnAujanUhL" role="1TKVEi">
-      <property role="IQ2ns" value="4582300353799627889" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="users" />
-      <ref role="20lvS9" node="3YnAujanUhM" resolve="UserList" />
-    </node>
   </node>
   <node concept="1TIwiD" id="3YnAujanKew">
     <property role="EcuMT" value="4582300353799586720" />
@@ -120,11 +120,47 @@
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="tpee:f$Xl_Og" resolve="StringLiteral" />
     </node>
+    <node concept="1TJgyj" id="10L0MVGZ_ME" role="1TKVEi">
+      <property role="IQ2ns" value="1166717278545140906" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="recursive" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="tpee:fzclF81" resolve="BooleanConstant" />
+    </node>
+    <node concept="1TJgyj" id="10L0MVGZ_Pt" role="1TKVEi">
+      <property role="IQ2ns" value="1166717278545141085" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="owner" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="tpee:f$Xl_Og" resolve="StringLiteral" />
+    </node>
+    <node concept="1TJgyj" id="10L0MVGZ_Pu" role="1TKVEi">
+      <property role="IQ2ns" value="1166717278545141086" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="group" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="3YnAujaqvOi" resolve="ITarget" />
+    </node>
   </node>
   <node concept="1TIwiD" id="3YnAujanKeW">
     <property role="EcuMT" value="4582300353799586748" />
     <property role="TrG5h" value="User" />
+    <property role="34LRSv" value="User" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="10L0MVGZ_NJ" role="1TKVEi">
+      <property role="IQ2ns" value="1166717278545140975" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="home" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="tpee:f$Xl_Og" resolve="StringLiteral" />
+    </node>
+    <node concept="1TJgyj" id="10L0MVGZ_NK" role="1TKVEi">
+      <property role="IQ2ns" value="1166717278545140976" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="groups" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="3YnAujaq9Ri" resolve="GroupReference" />
+    </node>
     <node concept="PrWs8" id="3YnAujanKfn" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
@@ -245,6 +281,31 @@
     </node>
     <node concept="PrWs8" id="3YnAujarl8m" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="10L0MVGYZ5b">
+    <property role="EcuMT" value="1166717278544982347" />
+    <property role="TrG5h" value="UserReferenceList" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="10L0MVGYZ5c" role="1TKVEi">
+      <property role="IQ2ns" value="1166717278544982348" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="users" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="3YnAujao57w" resolve="UserReference" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="10L0MVGZ_Ng">
+    <property role="EcuMT" value="1166717278545140944" />
+    <property role="TrG5h" value="DefGroup" />
+    <property role="34LRSv" value="Groups" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="10L0MVGZ_Nm" role="1TKVEi">
+      <property role="IQ2ns" value="1166717278545140950" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="groups" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="3YnAujanK0n" resolve="Group" />
     </node>
   </node>
 </model>
