@@ -40,7 +40,7 @@
       </concept>
       <concept id="4582300353799585787" name="SysMod.structure.SystemOp" flags="ng" index="3PMmov">
         <child id="4582300353799602407" name="folders" index="3PMd$3" />
-        <child id="4582300353800524315" name="file" index="3PYGJZ" />
+        <child id="4582300353800524315" name="files" index="3PYGJZ" />
         <child id="1166717278545192053" name="users" index="3WNytr" />
         <child id="1166717278545141066" name="defgroup" index="3WNPT$" />
       </concept>
@@ -128,6 +128,27 @@
         <ref role="3PXWw5" node="10L0MVGZYMA" resolve="baba" />
       </node>
       <node concept="3Xd6$A" id="10L0MVH1JWN" role="3WNPTN" />
+    </node>
+    <node concept="3PM9D4" id="5_filGtTmj0" role="3PMd$3">
+      <property role="TrG5h" value="test" />
+      <node concept="3PXWwV" id="5_filGtTmkb" role="3PXPcU">
+        <node concept="3PZKgQ" id="5_filGtTmki" role="3PXPdi">
+          <ref role="3PZKgK" node="10L0MVH0$g6" resolve="hackers" />
+        </node>
+        <node concept="3PMd$G" id="5_filGtTmkd" role="3PXPdj">
+          <property role="3PMd$7" value="3YnAujar0mD/allow" />
+          <property role="3PMd$0" value="3YnAujar0mD/allow" />
+          <property role="3PMd$1" value="3YnAujar0mD/allow" />
+        </node>
+      </node>
+      <node concept="Xl_RD" id="5_filGtTmj1" role="3PZjji">
+        <property role="Xl_RC" value="/hey/testers" />
+      </node>
+      <node concept="3clFbT" id="5_filGtTmj2" role="3WNPY4" />
+      <node concept="3Xd6$A" id="5_filGtTmjZ" role="3WNPTN" />
+      <node concept="3PZKgQ" id="5_filGtTmk5" role="3WNPTK">
+        <ref role="3PZKgK" node="10L0MVH0$g6" resolve="hackers" />
+      </node>
     </node>
     <node concept="3PM9Do" id="10L0MVGZYMA" role="3WNytr">
       <property role="TrG5h" value="baba" />

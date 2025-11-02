@@ -5382,7 +5382,7 @@
                         <node concept="liA8E" id="ud" role="2OqNvi">
                           <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2.aggregate(java.lang.String,long)" resolve="aggregate" />
                           <node concept="Xl_RD" id="ue" role="37wK5m">
-                            <property role="Xl_RC" value="file" />
+                            <property role="Xl_RC" value="files" />
                           </node>
                           <node concept="11gdke" id="uf" role="37wK5m">
                             <property role="11gdj1" value="3f9799e4ca6d521bL" />

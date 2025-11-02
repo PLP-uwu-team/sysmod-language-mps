@@ -198,7 +198,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("defgroup", 0x1031032eecfe5d4aL).target(0x248c097d53364d24L, 0x9241611e979642dbL, 0x1031032eecfe5cd0L).optional(true).ordered(true).multiple(false).origin("1166717278545141066").done();
     b.aggregate("users", 0x1031032eecff2475L).target(0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca5f03bcL).optional(true).ordered(true).multiple(true).origin("1166717278545192053").done();
     b.aggregate("folders", 0x3f9799e4ca5f40e7L).target(0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca5f03a0L).optional(true).ordered(true).multiple(true).origin("4582300353799602407").done();
-    b.aggregate("file", 0x3f9799e4ca6d521bL).target(0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca6d5215L).optional(true).ordered(true).multiple(true).origin("4582300353800524315").done();
+    b.aggregate("files", 0x3f9799e4ca6d521bL).target(0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca6d5215L).optional(true).ordered(true).multiple(true).origin("4582300353800524315").done();
     b.alias("SystemOperation");
     return b.create();
   }

@@ -82,7 +82,7 @@
     <node concept="1TJgyj" id="3YnAujarl8r" role="1TKVEi">
       <property role="IQ2ns" value="4582300353800524315" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="file" />
+      <property role="20kJfa" value="files" />
       <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" node="3YnAujarl8l" resolve="File" />
     </node>

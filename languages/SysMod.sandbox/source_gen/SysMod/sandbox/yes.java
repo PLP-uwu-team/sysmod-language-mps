@@ -5,7 +5,13 @@ package SysMod.sandbox;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.ArrayList;
+import java.io.File;
+import java.io.PrintStream;
+import java.io.FileOutputStream;
+import java.util.HashMap;
+import java.io.IOException;
 
 public class yes {
   public yes() {
@@ -50,20 +56,110 @@ public class yes {
   private static void printGroupScriptBlock(String group) {
     System.out.println("sudo groupadd -f " + group);
   }
-  private static void printFolderConfig(String dir, String owner, String group, boolean recursive, Map<String, List<Boolean>> permisison) {
-    System.out.println("dir");
-  }
-  public static void main(String[] args) {
+  private static void printFolderConfig(String path, String owner, String group, boolean recursive, Map<String, List<String>> permissions) {
+    String recursiveFlag = (recursive ? " -R" : "");
+    System.out.println("mkdir -p " + path);
+    System.out.println("chown" + recursiveFlag + " " + owner + ":" + group + " " + path);
 
-    yes mySys = new yes();
-    System.out.println("echo 'System Operation " + "yes" + " ....'");
-    System.out.println("echo 'Groups'");
-    System.out.println("echo '-------------------'");
-    System.out.println("echo 'Users'");
-    {
-      List<String> usergroups_a_0 = ListSequence.fromList(new ArrayList<String>());
-      printUserScriptBlock("papaya", "", usergroups_a_0);
+    if (permissions != null && !(MapSequence.fromMap(permissions).isEmpty())) {
+      List<String> aclEntries = ListSequence.fromList(new ArrayList<String>());
+      Iterable<String> keys = MapSequence.fromMap(permissions).keySet();
+      for (String key : keys) {
+        String rule = ListSequence.fromList(MapSequence.fromMap(permissions).get(key)).getElement(0) + ":" + key + ":" + ListSequence.fromList(MapSequence.fromMap(permissions).get(key)).getElement(1);
+        ListSequence.fromList(aclEntries).addElement(rule);
+      }
+      String cmd = "sudo setfacl";
+      cmd += recursiveFlag;
+      String conf = " -m " + String.join(",", aclEntries) + " " + path;
+      cmd += conf;
+      System.out.println(cmd);
+      if (recursive) {
+        String yes = "sudo setfacl" + recursiveFlag + " -d" + conf;
+        System.out.println(yes);
+      }
     }
+  }
+  private static void printFileConfig(String path, String owner, String group, Map<String, List<String>> permissions) {
+    String dir;
+    int lastslash = path.lastIndexOf('/');
+    if (lastslash != -1) {
+      dir = path.substring(0, lastslash);
+    } else {
+      dir = "";
+    }
+    if (!(dir.isEmpty())) {
+      System.out.println("mkdir -p " + dir);
+    }
+    System.out.println("touch " + path);
+    System.out.println("chown" + " " + owner + ":" + group + " " + path);
+
+    if (permissions != null && !(MapSequence.fromMap(permissions).isEmpty())) {
+      List<String> aclEntries = ListSequence.fromList(new ArrayList<String>());
+      Iterable<String> keys = MapSequence.fromMap(permissions).keySet();
+      for (String key : keys) {
+        String rule = ListSequence.fromList(MapSequence.fromMap(permissions).get(key)).getElement(0) + ":" + key + ":" + ListSequence.fromList(MapSequence.fromMap(permissions).get(key)).getElement(1);
+        ListSequence.fromList(aclEntries).addElement(rule);
+      }
+      String cmd = "sudo setfacl";
+      String conf = " -m " + String.join(",", aclEntries) + " " + path;
+      cmd += conf;
+      System.out.println(cmd);
+    }
+  }
+
+  public static void main(String[] args) {
+    String fn = "yes" + ".sh";
+    File outputFile = new File(fn);
+    PrintStream originalOut = System.out;
+
+    try (FileOutputStream fos = new FileOutputStream(outputFile, false)) {
+
+      PrintStream ps = new PrintStream(fos);
+      System.setOut(ps);
+      yes mySys = new yes();
+      System.out.println("#!/bin/bash");
+      System.out.println("set -e");
+      System.out.println("set -x");
+      System.out.println("echo 'System Operation " + "yes" + " ....'");
+      System.out.println("echo 'Groups'");
+      System.out.println("echo '-------------------'");
+      System.out.println("echo 'Users'");
+      {
+        List<String> usergroups_a_1 = ListSequence.fromList(new ArrayList<String>());
+        printUserScriptBlock("papaya", "", usergroups_a_1);
+      }
+      {
+        Map<String, List<String>> permissions_a_3 = MapSequence.fromMap(new HashMap<String, List<String>>());
+        {
+          List<String> userPerm_a0_3 = ListSequence.fromList(new ArrayList<String>());
+          ListSequence.fromList(userPerm_a0_3).addElement("u");
+          ListSequence.fromList(userPerm_a0_3).addElement("---");
+          MapSequence.fromMap(permissions_a_3).put("papaya", userPerm_a0_3);
+        }
+        printFolderConfig("/awa", "root", "root", false, permissions_a_3);
+      }
+      System.setOut(originalOut);
+    } catch (IOException ioe) {
+      originalOut.println("Could not write to ");
+      ioe.printStackTrace(originalOut);
+    } finally {
+      System.setOut(originalOut);
+    }
+    try {
+      String os = System.getProperty("os.name").toLowerCase();
+      if (os.contains("win")) {
+        new ProcessBuilder("cmd", "/c", "start", "", outputFile.getAbsolutePath()).start();
+      } else if (os.contains("mac")) {
+        new ProcessBuilder("open", outputFile.getAbsolutePath()).start();
+      } else {
+        new ProcessBuilder("xdg-open", outputFile.getAbsolutePath()).start();
+      }
+
+    } catch (IOException ioe) {
+      System.err.println("Failed to open file: " + ioe.getMessage());
+      ioe.printStackTrace();
+    }
+
 
   }
 }

@@ -336,9 +336,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
     }
   }
   private EditorCell createRefNodeList_2() {
-    AbstractCellListHandler handler = new fileListHandler_kzt72m_d3a(myNode, getEditorContext());
+    AbstractCellListHandler handler = new filesListHandler_kzt72m_d3a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
-    editorCell.setCellId("refNodeList_file");
+    editorCell.setCellId("refNodeList_files");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
@@ -346,11 +346,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
     editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
-  private static class fileListHandler_kzt72m_d3a extends RefNodeListHandler {
+  private static class filesListHandler_kzt72m_d3a extends RefNodeListHandler {
     @NotNull
     private SNode myNode;
 
-    public fileListHandler_kzt72m_d3a(SNode ownerNode, EditorContext context) {
+    public filesListHandler_kzt72m_d3a(SNode ownerNode, EditorContext context) {
       super(context, false);
       myNode = ownerNode;
     }
@@ -360,7 +360,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
       return myNode;
     }
     public SContainmentLink getSLink() {
-      return LINKS.file$SnF0;
+      return LINKS.files$SnF0;
     }
     public SAbstractConcept getChildSConcept() {
       return CONCEPTS.File$G1;
@@ -373,7 +373,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     }
     public EditorCell createEmptyCell() {
       getCellFactory().pushCellContext();
-      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(fileListHandler_kzt72m_d3a.this.getNode(), LINKS.file$SnF0));
+      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(filesListHandler_kzt72m_d3a.this.getNode(), LINKS.files$SnF0));
       try {
         EditorCell emptyCell = null;
         emptyCell = super.createEmptyCell();
@@ -438,6 +438,6 @@ import org.jetbrains.mps.openapi.language.SConcept;
     /*package*/ static final SContainmentLink defgroup$aHkz = MetaAdapterFactory.getContainmentLink(0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca5efffbL, 0x1031032eecfe5d4aL, "defgroup");
     /*package*/ static final SContainmentLink users$n_p_ = MetaAdapterFactory.getContainmentLink(0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca5efffbL, 0x1031032eecff2475L, "users");
     /*package*/ static final SContainmentLink folders$G_zy = MetaAdapterFactory.getContainmentLink(0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca5efffbL, 0x3f9799e4ca5f40e7L, "folders");
-    /*package*/ static final SContainmentLink file$SnF0 = MetaAdapterFactory.getContainmentLink(0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca5efffbL, 0x3f9799e4ca6d521bL, "file");
+    /*package*/ static final SContainmentLink files$SnF0 = MetaAdapterFactory.getContainmentLink(0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca5efffbL, 0x3f9799e4ca6d521bL, "files");
   }
 }
