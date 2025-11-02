@@ -4,41 +4,66 @@ package SysMod.sandbox;
 
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.Map;
 import java.util.ArrayList;
 
 public class yes {
-  public List<User> users = ListSequence.fromList(new ArrayList<User>());
   public yes() {
   }
+  private static void printUserScriptBlock(String username, String homeDir, List<String> groups) {
+    String groupOptions = "";
+    if (groups != null && !(ListSequence.fromList(groups).isEmpty())) {
+      groupOptions = " -G " + String.join(",", groups);
+    }
+    String addHomeOptions = "";
+    String modHomeOptions = "";
 
-  public class User {
-    /*package*/ String name;
-    /*package*/ String home;
-    /*package*/ List<String> groups;
-
-    public User(String name, String home, List<String> groups) {
-      this.name = name;
-      this.home = home;
-      this.groups = groups;
+    if (homeDir != null && !(homeDir.isEmpty())) {
+      addHomeOptions = " -m -d " + homeDir;
+      modHomeOptions = " -d " + homeDir;
     }
 
+    String useraddCmd = "sudo useradd" + addHomeOptions + groupOptions + " " + username;
+    String usermodCmd = "sudo usermod" + modHomeOptions + groupOptions + " " + username;
+
+    System.out.println("if ! id -u " + username + "&>/dev/null; then");
+    System.out.println("    " + useraddCmd);
+    System.out.println("else");
+    System.out.println("    " + usermodCmd);
+    System.out.println("fi");
+  }
+  private static void printUserScriptBlock(String username, List<String> groups) {
+    String groupOptions = "";
+    if (groups != null && !(ListSequence.fromList(groups).isEmpty())) {
+      groupOptions = " -G " + String.join(",", groups);
+    }
+
+    String useraddCmd = "sudo useradd" + groupOptions + " " + username;
+    String usermodCmd = "sudo usermod" + groupOptions + " " + username;
+
+    System.out.println("if ! id -u " + username + "&>/dev/null; then");
+    System.out.println("    " + useraddCmd);
+    System.out.println("else");
+    System.out.println("    " + usermodCmd);
+    System.out.println("fi");
+  }
+  private static void printGroupScriptBlock(String group) {
+    System.out.println("sudo groupadd -f " + group);
+  }
+  private static void printFolderConfig(String dir, String owner, String group, boolean recursive, Map<String, List<Boolean>> permisison) {
+    System.out.println("dir");
   }
   public static void main(String[] args) {
 
     yes mySys = new yes();
-
-    System.out.println("Groups");
-    System.out.println("------");
-    System.out.println("Users");
-    for (User u : mySys.users) {
-      System.out.println("if ! id -u " + u.name + "&>dev/null; then");
-      System.out.println("    sudo useradd -m -d " + u.home + " -G " + String.join(",", u.groups) + " " + u.name);
-      System.out.println("else");
-      System.out.println("    sudo usermod -d " + u.home + " -G " + String.join(",", u.groups) + " " + u.name);
-      for (String s : u.groups) {
-        System.out.println("sudo -aG " + s + u.name);
-      }
+    System.out.println("echo 'System Operation " + "yes" + " ....'");
+    System.out.println("echo 'Groups'");
+    System.out.println("echo '-------------------'");
+    System.out.println("echo 'Users'");
+    {
+      List<String> usergroups_a_0 = ListSequence.fromList(new ArrayList<String>());
+      printUserScriptBlock("papaya", "", usergroups_a_0);
     }
-    System.out.println("test");
+
   }
 }

@@ -86,11 +86,14 @@
       <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" node="3YnAujarl8l" resolve="File" />
     </node>
-    <node concept="PrWs8" id="3YnAujanK0m" role="PzmwI">
-      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
-    </node>
     <node concept="PrWs8" id="10L0MVHeDaK" role="PzmwI">
       <ref role="PrY4T" to="4fqr:431DWIovi3l" resolve="IMainClass" />
+    </node>
+    <node concept="PrWs8" id="4fCu$60vlJ9" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+    <node concept="PrWs8" id="4fCu$60xFpg" role="PzmwI">
+      <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
     </node>
   </node>
   <node concept="1TIwiD" id="3YnAujanK0n">
@@ -155,7 +158,6 @@
       <property role="IQ2ns" value="1166717278545140975" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="home" />
-      <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="tpee:f$Xl_Og" resolve="StringLiteral" />
     </node>
     <node concept="1TJgyj" id="10L0MVGZ_NK" role="1TKVEi">

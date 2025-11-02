@@ -3,6 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="248c097d-5336-4d24-9241-611e979642db" name="SysMod" version="0" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="12" />
   </languages>
   <imports />
   <registry>
@@ -154,9 +155,6 @@
       <node concept="3PZKgQ" id="10L0MVH0$gB" role="3WNPZu">
         <ref role="3PZKgK" node="10L0MVH0$gC" resolve="admin" />
       </node>
-      <node concept="Xl_RD" id="10L0MVH0$gn" role="3WNPZ1">
-        <property role="Xl_RC" value="/home/yes" />
-      </node>
     </node>
     <node concept="3PM9Do" id="10L0MVH0$hA" role="3WNytr">
       <property role="TrG5h" value="joejoe" />
@@ -193,6 +191,26 @@
   </node>
   <node concept="3PMmov" id="10L0MVH3bAR">
     <property role="TrG5h" value="yes" />
+    <node concept="3PM9D4" id="4fCu$60zqJ0" role="3PMd$3">
+      <property role="TrG5h" value="awa" />
+      <node concept="3PXWwV" id="4fCu$60zqJi" role="3PXPcU">
+        <node concept="3PMd$G" id="4fCu$60zqJk" role="3PXPdj" />
+        <node concept="3PXWw4" id="4fCu$60zLIo" role="3PXPdi">
+          <ref role="3PXWw5" node="4fCu$60zqIV" resolve="papaya" />
+        </node>
+      </node>
+      <node concept="Xl_RD" id="4fCu$60zqJ1" role="3PZjji">
+        <property role="Xl_RC" value="/awa" />
+      </node>
+      <node concept="3clFbT" id="4fCu$60zqJ2" role="3WNPY4" />
+      <node concept="3Xd6$A" id="4fCu$60zqJe" role="3WNPTN" />
+      <node concept="3Xd6$A" id="4fCu$60zqJg" role="3WNPTK" />
+    </node>
+    <node concept="3PM9Do" id="4fCu$60zqIV" role="3WNytr">
+      <property role="TrG5h" value="papaya" />
+      <node concept="Xl_RD" id="4fCu$60zqIW" role="3WNPZ1" />
+    </node>
+    <node concept="3WNPZY" id="4fCu$60zqIT" role="3WNPT$" />
   </node>
 </model>
 
