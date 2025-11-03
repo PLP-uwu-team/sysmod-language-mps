@@ -422,7 +422,7 @@
                 <node concept="3cpWs3" id="7MUdLpfWAEX" role="3uHU7B">
                   <node concept="3cpWs3" id="7MUdLpfW$WM" role="3uHU7B">
                     <node concept="Xl_RD" id="7MUdLpfWxZW" role="3uHU7B">
-                      <property role="Xl_RC" value="sudo useradd" />
+                      <property role="Xl_RC" value="$SUDO useradd" />
                     </node>
                     <node concept="37vLTw" id="7MUdLpfW_ir" role="3uHU7w">
                       <ref role="3cqZAo" node="7MUdLpfVNS9" resolve="addHomeOptions" />
@@ -451,7 +451,7 @@
                 <node concept="3cpWs3" id="7MUdLpfWKeu" role="3uHU7B">
                   <node concept="3cpWs3" id="7MUdLpfWIWA" role="3uHU7B">
                     <node concept="Xl_RD" id="7MUdLpfWGvn" role="3uHU7B">
-                      <property role="Xl_RC" value="sudo usermod" />
+                      <property role="Xl_RC" value="$SUDO usermod" />
                     </node>
                     <node concept="37vLTw" id="7MUdLpfWJgi" role="3uHU7w">
                       <ref role="3cqZAo" node="7MUdLpfVQ6O" resolve="modHomeOptions" />
@@ -479,7 +479,7 @@
               <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String)" resolve="println" />
               <node concept="3cpWs3" id="7MUdLpfWXN2" role="37wK5m">
                 <node concept="Xl_RD" id="7MUdLpfWY6K" role="3uHU7w">
-                  <property role="Xl_RC" value="&amp;&gt;/dev/null; then" />
+                  <property role="Xl_RC" value=" &amp;&gt;/dev/null; then" />
                 </node>
                 <node concept="3cpWs3" id="7MUdLpfWVKS" role="3uHU7B">
                   <node concept="Xl_RD" id="7MUdLpfWSTn" role="3uHU7B">
@@ -643,7 +643,7 @@
               <node concept="3cpWs3" id="7MUdLpfZAH2" role="3uHU7B">
                 <node concept="3cpWs3" id="7MUdLpfZAH3" role="3uHU7B">
                   <node concept="Xl_RD" id="7MUdLpfZAH5" role="3uHU7B">
-                    <property role="Xl_RC" value="sudo useradd" />
+                    <property role="Xl_RC" value="$SUDO useradd" />
                   </node>
                   <node concept="37vLTw" id="7MUdLpfZAH7" role="3uHU7w">
                     <ref role="3cqZAo" node="7MUdLpfZAG8" resolve="groupOptions" />
@@ -667,7 +667,7 @@
               <node concept="3cpWs3" id="7MUdLpfZAHe" role="3uHU7B">
                 <node concept="3cpWs3" id="7MUdLpfZAHf" role="3uHU7B">
                   <node concept="Xl_RD" id="7MUdLpfZAHh" role="3uHU7B">
-                    <property role="Xl_RC" value="sudo usermod" />
+                    <property role="Xl_RC" value="$SUDO usermod" />
                   </node>
                   <node concept="37vLTw" id="7MUdLpfZAHj" role="3uHU7w">
                     <ref role="3cqZAo" node="7MUdLpfZAG8" resolve="groupOptions" />
@@ -691,7 +691,7 @@
               <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String)" resolve="println" />
               <node concept="3cpWs3" id="7MUdLpfZAHq" role="37wK5m">
                 <node concept="Xl_RD" id="7MUdLpfZAHr" role="3uHU7w">
-                  <property role="Xl_RC" value="&amp;&gt;/dev/null; then" />
+                  <property role="Xl_RC" value=" &amp;&gt;/dev/null; then" />
                 </node>
                 <node concept="3cpWs3" id="7MUdLpfZAHs" role="3uHU7B">
                   <node concept="Xl_RD" id="7MUdLpfZAHt" role="3uHU7B">
@@ -801,7 +801,7 @@
                   <ref role="3cqZAo" node="7MUdLpg0B97" resolve="group" />
                 </node>
                 <node concept="Xl_RD" id="7MUdLpg0E7N" role="3uHU7B">
-                  <property role="Xl_RC" value="sudo groupadd -f " />
+                  <property role="Xl_RC" value="$SUDO groupadd -f " />
                 </node>
               </node>
             </node>
@@ -848,7 +848,7 @@
                   <ref role="3cqZAo" node="7MUdLpg1RuV" resolve="path" />
                 </node>
                 <node concept="Xl_RD" id="7MUdLpg3WNF" role="3uHU7B">
-                  <property role="Xl_RC" value="mkdir -p " />
+                  <property role="Xl_RC" value="$SUDO mkdir -p " />
                 </node>
               </node>
             </node>
@@ -873,7 +873,7 @@
                         <node concept="3cpWs3" id="7MUdLpg4ciE" role="3uHU7B">
                           <node concept="3cpWs3" id="7MUdLpg49wL" role="3uHU7B">
                             <node concept="Xl_RD" id="7MUdLpg45zZ" role="3uHU7B">
-                              <property role="Xl_RC" value="chown" />
+                              <property role="Xl_RC" value="$SUDO chown" />
                             </node>
                             <node concept="37vLTw" id="7MUdLpg4a9U" role="3uHU7w">
                               <ref role="3cqZAo" node="7MUdLpg3ODo" resolve="recursiveFlag" />
@@ -1010,7 +1010,7 @@
                 <property role="TrG5h" value="cmd" />
                 <node concept="17QB3L" id="5_filGtF2pw" role="1tU5fm" />
                 <node concept="Xl_RD" id="5_filGtFi6P" role="33vP2m">
-                  <property role="Xl_RC" value="sudo setfacl" />
+                  <property role="Xl_RC" value="$SUDO setfacl" />
                 </node>
               </node>
             </node>
@@ -1092,7 +1092,7 @@
                       <node concept="3cpWs3" id="5_filGtJjRU" role="3uHU7B">
                         <node concept="3cpWs3" id="5_filGtJaip" role="3uHU7B">
                           <node concept="Xl_RD" id="5_filGtInr$" role="3uHU7B">
-                            <property role="Xl_RC" value="sudo setfacl" />
+                            <property role="Xl_RC" value="$SUDO setfacl" />
                           </node>
                           <node concept="37vLTw" id="5_filGtJfdk" role="3uHU7w">
                             <ref role="3cqZAo" node="7MUdLpg3ODo" resolve="recursiveFlag" />
@@ -1256,7 +1256,7 @@
                   <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String)" resolve="println" />
                   <node concept="3cpWs3" id="5_filGtLsIU" role="37wK5m">
                     <node concept="Xl_RD" id="5_filGtLsIW" role="3uHU7B">
-                      <property role="Xl_RC" value="mkdir -p " />
+                      <property role="Xl_RC" value="$SUDO mkdir -p " />
                     </node>
                     <node concept="37vLTw" id="5_filGtPMAG" role="3uHU7w">
                       <ref role="3cqZAo" node="5_filGtMGV0" resolve="dir" />
@@ -1290,7 +1290,7 @@
                   <ref role="3cqZAo" node="5_filGtLsKO" resolve="path" />
                 </node>
                 <node concept="Xl_RD" id="5_filGtQex8" role="3uHU7B">
-                  <property role="Xl_RC" value="touch " />
+                  <property role="Xl_RC" value="$SUDO touch " />
                 </node>
               </node>
             </node>
@@ -1314,7 +1314,7 @@
                       <node concept="3cpWs3" id="5_filGtLsJ6" role="3uHU7B">
                         <node concept="3cpWs3" id="5_filGtLsJ7" role="3uHU7B">
                           <node concept="Xl_RD" id="5_filGtLsJ9" role="3uHU7B">
-                            <property role="Xl_RC" value="chown" />
+                            <property role="Xl_RC" value="$SUDO chown" />
                           </node>
                           <node concept="Xl_RD" id="5_filGtLsJb" role="3uHU7w">
                             <property role="Xl_RC" value=" " />
@@ -1447,7 +1447,7 @@
                 <property role="TrG5h" value="cmd" />
                 <node concept="17QB3L" id="5_filGtLsK1" role="1tU5fm" />
                 <node concept="Xl_RD" id="5_filGtLsK2" role="33vP2m">
-                  <property role="Xl_RC" value="sudo setfacl" />
+                  <property role="Xl_RC" value="$SUDO setfacl" />
                 </node>
               </node>
             </node>
@@ -1557,27 +1557,32 @@
           <node concept="3cpWsn" id="5_filGucH5F" role="3cpWs9">
             <property role="TrG5h" value="fn" />
             <node concept="17QB3L" id="5_filGucH5A" role="1tU5fm" />
-            <node concept="3cpWs3" id="5_filGudxdr" role="33vP2m">
+            <node concept="3cpWs3" id="1K7Ri6ya9H3" role="33vP2m">
               <node concept="Xl_RD" id="5_filGudE9K" role="3uHU7w">
                 <property role="Xl_RC" value=".sh" />
               </node>
-              <node concept="Xl_RD" id="5_filGudgOh" role="3uHU7B">
-                <property role="Xl_RC" value="test" />
-                <node concept="17Uvod" id="5_filGudVLR" role="lGtFl">
-                  <property role="2qtEX9" value="value" />
-                  <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
-                  <node concept="3zFVjK" id="5_filGudVLU" role="3zH0cK">
-                    <node concept="3clFbS" id="5_filGudVLV" role="2VODD2">
-                      <node concept="3clFbF" id="5_filGudVM1" role="3cqZAp">
-                        <node concept="2OqwBi" id="5_filGudVLW" role="3clFbG">
-                          <node concept="3TrcHB" id="5_filGudVLZ" role="2OqNvi">
-                            <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+              <node concept="3cpWs3" id="5_filGudxdr" role="3uHU7B">
+                <node concept="Xl_RD" id="5_filGudgOh" role="3uHU7B">
+                  <property role="Xl_RC" value="test" />
+                  <node concept="17Uvod" id="5_filGudVLR" role="lGtFl">
+                    <property role="2qtEX9" value="value" />
+                    <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
+                    <node concept="3zFVjK" id="5_filGudVLU" role="3zH0cK">
+                      <node concept="3clFbS" id="5_filGudVLV" role="2VODD2">
+                        <node concept="3clFbF" id="5_filGudVM1" role="3cqZAp">
+                          <node concept="2OqwBi" id="5_filGudVLW" role="3clFbG">
+                            <node concept="3TrcHB" id="5_filGudVLZ" role="2OqNvi">
+                              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                            </node>
+                            <node concept="30H73N" id="5_filGudVM0" role="2Oq$k0" />
                           </node>
-                          <node concept="30H73N" id="5_filGudVM0" role="2Oq$k0" />
                         </node>
                       </node>
                     </node>
                   </node>
+                </node>
+                <node concept="Xl_RD" id="1K7Ri6yaf4$" role="3uHU7w">
+                  <property role="Xl_RC" value="_sysmod" />
                 </node>
               </node>
             </node>
@@ -1732,6 +1737,104 @@
                   <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String)" resolve="println" />
                   <node concept="Xl_RD" id="5_filGu2LVP" role="37wK5m">
                     <property role="Xl_RC" value="set -x" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="1K7Ri6yawCE" role="3cqZAp">
+              <node concept="2OqwBi" id="1K7Ri6yazQX" role="3clFbG">
+                <node concept="10M0yZ" id="1K7Ri6yawDG" role="2Oq$k0">
+                  <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
+                  <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+                </node>
+                <node concept="liA8E" id="1K7Ri6yaFgt" role="2OqNvi">
+                  <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String)" resolve="println" />
+                  <node concept="Xl_RD" id="1K7Ri6yaKwE" role="37wK5m">
+                    <property role="Xl_RC" value="SUDO=''" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="1K7Ri6yb9p_" role="3cqZAp">
+              <node concept="2OqwBi" id="1K7Ri6ybcyX" role="3clFbG">
+                <node concept="10M0yZ" id="1K7Ri6yb9qB" role="2Oq$k0">
+                  <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
+                  <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+                </node>
+                <node concept="liA8E" id="1K7Ri6ybhtK" role="2OqNvi">
+                  <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String)" resolve="println" />
+                  <node concept="Xl_RD" id="1K7Ri6ybmPi" role="37wK5m">
+                    <property role="Xl_RC" value="if [ \&quot;$EUID\&quot; -ne 0 ]; then" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="1K7Ri6yduns" role="3cqZAp">
+              <node concept="2OqwBi" id="1K7Ri6ydxxZ" role="3clFbG">
+                <node concept="10M0yZ" id="1K7Ri6yduoy" role="2Oq$k0">
+                  <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
+                  <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+                </node>
+                <node concept="liA8E" id="1K7Ri6yd$Ge" role="2OqNvi">
+                  <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String)" resolve="println" />
+                  <node concept="Xl_RD" id="1K7Ri6ydEPk" role="37wK5m">
+                    <property role="Xl_RC" value="    SUDO='sudo'" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="1K7Ri6yhh2s" role="3cqZAp">
+              <node concept="2OqwBi" id="1K7Ri6yhkrz" role="3clFbG">
+                <node concept="10M0yZ" id="1K7Ri6yhh3u" role="2Oq$k0">
+                  <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
+                  <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+                </node>
+                <node concept="liA8E" id="1K7Ri6yhzpO" role="2OqNvi">
+                  <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String)" resolve="println" />
+                  <node concept="Xl_RD" id="1K7Ri6yhCve" role="37wK5m">
+                    <property role="Xl_RC" value="fi" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="1K7Ri6ymwKd" role="3cqZAp">
+              <node concept="2OqwBi" id="1K7Ri6ymzXW" role="3clFbG">
+                <node concept="10M0yZ" id="1K7Ri6ymwM5" role="2Oq$k0">
+                  <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
+                  <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+                </node>
+                <node concept="liA8E" id="1K7Ri6ymDmJ" role="2OqNvi">
+                  <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String)" resolve="println" />
+                  <node concept="Xl_RD" id="1K7Ri6ymJr7" role="37wK5m">
+                    <property role="Xl_RC" value="if ! command -v setfacl &gt;/dev/null 2&gt;&amp;1; then" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="1K7Ri6ynsnv" role="3cqZAp">
+              <node concept="2OqwBi" id="1K7Ri6ynxK1" role="3clFbG">
+                <node concept="10M0yZ" id="1K7Ri6ynsqd" role="2Oq$k0">
+                  <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
+                  <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+                </node>
+                <node concept="liA8E" id="1K7Ri6ynANL" role="2OqNvi">
+                  <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String)" resolve="println" />
+                  <node concept="Xl_RD" id="1K7Ri6ynG9w" role="37wK5m">
+                    <property role="Xl_RC" value="    echo \&quot;Installing ACL tools\&quot;" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="1K7Ri6yozGC" role="3cqZAp">
+              <node concept="2OqwBi" id="1K7Ri6yoD3N" role="3clFbG">
+                <node concept="10M0yZ" id="1K7Ri6yozJq" role="2Oq$k0">
+                  <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
+                  <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+                </node>
+                <node concept="liA8E" id="1K7Ri6yoI5E" role="2OqNvi">
+                  <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String)" resolve="println" />
+                  <node concept="Xl_RD" id="1K7Ri6yoNt3" role="37wK5m">
+                    <property role="Xl_RC" value="    $SUDO apt update -y\n    $SUDO apt install -y acl\nfi" />
                   </node>
                 </node>
               </node>

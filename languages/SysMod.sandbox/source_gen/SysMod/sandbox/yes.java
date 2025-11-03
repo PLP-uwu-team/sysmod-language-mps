@@ -29,10 +29,10 @@ public class yes {
       modHomeOptions = " -d " + homeDir;
     }
 
-    String useraddCmd = "sudo useradd" + addHomeOptions + groupOptions + " " + username;
-    String usermodCmd = "sudo usermod" + modHomeOptions + groupOptions + " " + username;
+    String useraddCmd = "$SUDO useradd" + addHomeOptions + groupOptions + " " + username;
+    String usermodCmd = "$SUDO usermod" + modHomeOptions + groupOptions + " " + username;
 
-    System.out.println("if ! id -u " + username + "&>/dev/null; then");
+    System.out.println("if ! id -u " + username + " &>/dev/null; then");
     System.out.println("    " + useraddCmd);
     System.out.println("else");
     System.out.println("    " + usermodCmd);
@@ -44,22 +44,22 @@ public class yes {
       groupOptions = " -G " + String.join(",", groups);
     }
 
-    String useraddCmd = "sudo useradd" + groupOptions + " " + username;
-    String usermodCmd = "sudo usermod" + groupOptions + " " + username;
+    String useraddCmd = "$SUDO useradd" + groupOptions + " " + username;
+    String usermodCmd = "$SUDO usermod" + groupOptions + " " + username;
 
-    System.out.println("if ! id -u " + username + "&>/dev/null; then");
+    System.out.println("if ! id -u " + username + " &>/dev/null; then");
     System.out.println("    " + useraddCmd);
     System.out.println("else");
     System.out.println("    " + usermodCmd);
     System.out.println("fi");
   }
   private static void printGroupScriptBlock(String group) {
-    System.out.println("sudo groupadd -f " + group);
+    System.out.println("$SUDO groupadd -f " + group);
   }
   private static void printFolderConfig(String path, String owner, String group, boolean recursive, Map<String, List<String>> permissions) {
     String recursiveFlag = (recursive ? " -R" : "");
-    System.out.println("mkdir -p " + path);
-    System.out.println("chown" + recursiveFlag + " " + owner + ":" + group + " " + path);
+    System.out.println("$SUDO mkdir -p " + path);
+    System.out.println("$SUDO chown" + recursiveFlag + " " + owner + ":" + group + " " + path);
 
     if (permissions != null && !(MapSequence.fromMap(permissions).isEmpty())) {
       List<String> aclEntries = ListSequence.fromList(new ArrayList<String>());
@@ -68,13 +68,13 @@ public class yes {
         String rule = ListSequence.fromList(MapSequence.fromMap(permissions).get(key)).getElement(0) + ":" + key + ":" + ListSequence.fromList(MapSequence.fromMap(permissions).get(key)).getElement(1);
         ListSequence.fromList(aclEntries).addElement(rule);
       }
-      String cmd = "sudo setfacl";
+      String cmd = "$SUDO setfacl";
       cmd += recursiveFlag;
       String conf = " -m " + String.join(",", aclEntries) + " " + path;
       cmd += conf;
       System.out.println(cmd);
       if (recursive) {
-        String yes = "sudo setfacl" + recursiveFlag + " -d" + conf;
+        String yes = "$SUDO setfacl" + recursiveFlag + " -d" + conf;
         System.out.println(yes);
       }
     }
@@ -88,10 +88,10 @@ public class yes {
       dir = "";
     }
     if (!(dir.isEmpty())) {
-      System.out.println("mkdir -p " + dir);
+      System.out.println("$SUDO mkdir -p " + dir);
     }
-    System.out.println("touch " + path);
-    System.out.println("chown" + " " + owner + ":" + group + " " + path);
+    System.out.println("$SUDO touch " + path);
+    System.out.println("$SUDO chown" + " " + owner + ":" + group + " " + path);
 
     if (permissions != null && !(MapSequence.fromMap(permissions).isEmpty())) {
       List<String> aclEntries = ListSequence.fromList(new ArrayList<String>());
@@ -100,7 +100,7 @@ public class yes {
         String rule = ListSequence.fromList(MapSequence.fromMap(permissions).get(key)).getElement(0) + ":" + key + ":" + ListSequence.fromList(MapSequence.fromMap(permissions).get(key)).getElement(1);
         ListSequence.fromList(aclEntries).addElement(rule);
       }
-      String cmd = "sudo setfacl";
+      String cmd = "$SUDO setfacl";
       String conf = " -m " + String.join(",", aclEntries) + " " + path;
       cmd += conf;
       System.out.println(cmd);
@@ -108,7 +108,7 @@ public class yes {
   }
 
   public static void main(String[] args) {
-    String fn = "yes" + ".sh";
+    String fn = "yes" + "_sysmod" + ".sh";
     File outputFile = new File(fn);
     PrintStream originalOut = System.out;
 
@@ -120,6 +120,13 @@ public class yes {
       System.out.println("#!/bin/bash");
       System.out.println("set -e");
       System.out.println("set -x");
+      System.out.println("SUDO=''");
+      System.out.println("if [ \"$EUID\" -ne 0 ]; then");
+      System.out.println("    SUDO='sudo'");
+      System.out.println("fi");
+      System.out.println("if ! command -v setfacl >/dev/null 2>&1; then");
+      System.out.println("    echo \"Installing ACL tools\"");
+      System.out.println("    $SUDO apt update -y\n    $SUDO apt install -y acl\nfi");
       System.out.println("echo 'System Operation " + "yes" + " ....'");
       System.out.println("echo 'Groups'");
       System.out.println("echo '-------------------'");
