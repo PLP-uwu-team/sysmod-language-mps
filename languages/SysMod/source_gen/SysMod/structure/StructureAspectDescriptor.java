@@ -206,6 +206,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SysMod", "User", 0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca5f03bcL);
     b.class_(false, false, false);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x33d23ee961a0cbf3L);
     b.origin("r:5562c3fd-8bed-4a60-8efa-3bbd60a507f0(SysMod.structure)/4582300353799586748");
     b.version(3);
     b.aggregate("home", 0x1031032eecfe5cefL).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L).optional(true).ordered(true).multiple(false).origin("1166717278545140975").done();

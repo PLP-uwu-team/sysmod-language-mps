@@ -22,10 +22,12 @@ public class ConstraintsAspectDescriptor extends BaseConstraintsAspectDescriptor
     SAbstractConcept cncpt = concept;
     switch (conceptIndex.index(cncpt)) {
       case 0:
+        return new GroupReference_Constraints(context);
+      case 1:
         return new UserReference_Constraints(context);
       default:
     }
     return null;
   }
-  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca6051e0L)).seal();
+  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca689dd2L), MetaIdFactory.conceptId(0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca6051e0L)).seal();
 }

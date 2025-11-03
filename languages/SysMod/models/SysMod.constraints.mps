@@ -40,5 +40,14 @@
       </node>
     </node>
   </node>
+  <node concept="1M2fIO" id="1K7Ri6yrKPJ">
+    <ref role="1M2myG" to="loeo:3YnAujaq9Ri" resolve="GroupReference" />
+    <node concept="1N5Pfh" id="1K7Ri6yuHDm" role="1Mr941">
+      <ref role="1N5Vy1" to="loeo:3YnAujaq9Rk" resolve="group" />
+      <node concept="1dDu$B" id="1K7Ri6yuHEX" role="1N6uqs">
+        <ref role="1dDu$A" to="loeo:3YnAujanK0n" resolve="Group" />
+      </node>
+    </node>
+  </node>
 </model>
 

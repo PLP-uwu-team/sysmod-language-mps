@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="-ch25xod3s1vafj5zhdpd0s2pdrzidne">
-  <files names="ConstraintsAspectDescriptor.java:UserReference_Constraints.java" />
+<product version="3" modelHash="7xsobdkya61rfqev56dpqba0eape1vm">
+  <files names="ConstraintsAspectDescriptor.java:GroupReference_Constraints.java:UserReference_Constraints.java" />
 </product>
 

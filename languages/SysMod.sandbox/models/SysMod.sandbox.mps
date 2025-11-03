@@ -233,5 +233,16 @@
     </node>
     <node concept="3WNPZY" id="4fCu$60zqIT" role="3WNPT$" />
   </node>
+  <node concept="3PMmov" id="1K7Ri6yth0b">
+    <property role="TrG5h" value="Debia" />
+    <node concept="3WNPZY" id="1K7Ri6yth0o" role="3WNPT$">
+      <node concept="3PM9BN" id="1K7Ri6yth0p" role="3WNPZS">
+        <property role="TrG5h" value="furry" />
+      </node>
+      <node concept="3PM9BN" id="1K7Ri6yth0u" role="3WNPZS">
+        <property role="TrG5h" value="hackers" />
+      </node>
+    </node>
+  </node>
 </model>
 

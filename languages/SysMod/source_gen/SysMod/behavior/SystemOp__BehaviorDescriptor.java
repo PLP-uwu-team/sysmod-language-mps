@@ -17,6 +17,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.scope.SimpleRoleScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -38,6 +39,11 @@ public final class SystemOp__BehaviorDescriptor extends BaseBHDescriptor {
       return SimpleRoleScope.forNamedElements(__thisNode__, LINKS.users$n_p_);
 
     }
+    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), CONCEPTS.Group$$t)) {
+      return SimpleRoleScope.forNamedElements(SLinkOperations.getTarget(__thisNode__, LINKS.defgroup$aHkz), LINKS.groups$l6_Y);
+
+    }
+
     return null;
   }
 
@@ -89,9 +95,12 @@ public final class SystemOp__BehaviorDescriptor extends BaseBHDescriptor {
 
   private static final class CONCEPTS {
     /*package*/ static final SConcept User$vv = MetaAdapterFactory.getConcept(0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca5f03bcL, "SysMod.structure.User");
+    /*package*/ static final SConcept Group$$t = MetaAdapterFactory.getConcept(0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca5f0017L, "SysMod.structure.Group");
   }
 
   private static final class LINKS {
     /*package*/ static final SContainmentLink users$n_p_ = MetaAdapterFactory.getContainmentLink(0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca5efffbL, 0x1031032eecff2475L, "users");
+    /*package*/ static final SContainmentLink defgroup$aHkz = MetaAdapterFactory.getContainmentLink(0x248c097d53364d24L, 0x9241611e979642dbL, 0x3f9799e4ca5efffbL, 0x1031032eecfe5d4aL, "defgroup");
+    /*package*/ static final SContainmentLink groups$l6_Y = MetaAdapterFactory.getContainmentLink(0x248c097d53364d24L, 0x9241611e979642dbL, 0x1031032eecfe5cd0L, 0x1031032eecfe5cd6L, "groups");
   }
 }

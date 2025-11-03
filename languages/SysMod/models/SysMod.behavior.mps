@@ -165,6 +165,38 @@
             <node concept="3clFbH" id="4fCu$60zsuL" role="3cqZAp" />
           </node>
         </node>
+        <node concept="3clFbJ" id="1K7Ri6y$E8s" role="3cqZAp">
+          <node concept="2OqwBi" id="1K7Ri6y$E8t" role="3clFbw">
+            <node concept="37vLTw" id="1K7Ri6y$E8u" role="2Oq$k0">
+              <ref role="3cqZAo" node="4fCu$60xFpG" resolve="kind" />
+            </node>
+            <node concept="2Zo12i" id="1K7Ri6y$E8v" role="2OqNvi">
+              <node concept="chp4Y" id="1K7Ri6y$EhW" role="2Zo12j">
+                <ref role="cht4Q" to="loeo:3YnAujanK0n" resolve="Group" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbS" id="1K7Ri6y$E8x" role="3clFbx">
+            <node concept="3cpWs6" id="1K7Ri6y$E8y" role="3cqZAp">
+              <node concept="2YIFZM" id="1K7Ri6y$E8z" role="3cqZAk">
+                <ref role="37wK5l" to="o8zo:6t3ylNOzI9Y" resolve="forNamedElements" />
+                <ref role="1Pybhc" to="o8zo:7ipADkTevLm" resolve="SimpleRoleScope" />
+                <node concept="2OqwBi" id="1K7Ri6y$Euu" role="37wK5m">
+                  <node concept="13iPFW" id="1K7Ri6y$E8$" role="2Oq$k0" />
+                  <node concept="3TrEf2" id="1K7Ri6y$G0x" role="2OqNvi">
+                    <ref role="3Tt5mk" to="loeo:10L0MVGZ_Pa" resolve="defgroup" />
+                  </node>
+                </node>
+                <node concept="359W_D" id="1K7Ri6y$E8_" role="37wK5m">
+                  <ref role="359W_E" to="loeo:10L0MVGZ_Ng" resolve="DefGroup" />
+                  <ref role="359W_F" to="loeo:10L0MVGZ_Nm" resolve="groups" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbH" id="1K7Ri6y$E8A" role="3cqZAp" />
+          </node>
+        </node>
+        <node concept="3clFbH" id="1K7Ri6y$E5S" role="3cqZAp" />
         <node concept="3cpWs6" id="4fCu$60zsyL" role="3cqZAp">
           <node concept="10Nm6u" id="4fCu$60zsyS" role="3cqZAk" />
         </node>
@@ -510,6 +542,12 @@
     </node>
     <node concept="13hLZK" id="5_filGt$_xS" role="13h7CW">
       <node concept="3clFbS" id="5_filGt$_xT" role="2VODD2" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="1K7Ri6yuHGX">
+    <ref role="13h7C2" to="loeo:3YnAujanKeW" resolve="User" />
+    <node concept="13hLZK" id="1K7Ri6yuHGY" role="13h7CW">
+      <node concept="3clFbS" id="1K7Ri6yuHGZ" role="2VODD2" />
     </node>
   </node>
 </model>
