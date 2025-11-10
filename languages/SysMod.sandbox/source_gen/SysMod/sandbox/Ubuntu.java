@@ -10,10 +10,11 @@ import java.util.ArrayList;
 import java.io.File;
 import java.io.PrintStream;
 import java.io.FileOutputStream;
+import java.util.HashMap;
 import java.io.IOException;
 
-public class Debia {
-  public Debia() {
+public class Ubuntu {
+  public Ubuntu() {
   }
   private static void printUserScriptBlock(String username, String homeDir, List<String> groups) {
     String groupOptions = "";
@@ -107,7 +108,7 @@ public class Debia {
   }
 
   public static void main(String[] args) {
-    String fn = "Debia" + "_sysmod" + ".sh";
+    String fn = "Ubuntu" + "_sysmod" + ".sh";
     File outputFile = new File(fn);
     PrintStream originalOut = System.out;
 
@@ -115,7 +116,7 @@ public class Debia {
 
       PrintStream ps = new PrintStream(fos);
       System.setOut(ps);
-      Debia mySys = new Debia();
+      Ubuntu mySys = new Ubuntu();
       System.out.println("#!/bin/bash");
       System.out.println("set -e");
       System.out.println("set -x");
@@ -126,12 +127,40 @@ public class Debia {
       System.out.println("if ! command -v setfacl >/dev/null 2>&1; then");
       System.out.println("    echo \"Installing ACL tools\"");
       System.out.println("    $SUDO apt update -y\n    $SUDO apt install -y acl\nfi");
-      System.out.println("echo 'System Operation " + "Debia" + " ....'");
+      System.out.println("echo 'System Operation " + "Ubuntu" + " ....'");
       System.out.println("echo 'Groups'");
-      printGroupScriptBlock("furry");
+      printGroupScriptBlock("teachers");
       printGroupScriptBlock("hackers");
+      printGroupScriptBlock("students");
       System.out.println("echo '-------------------'");
       System.out.println("echo 'Users'");
+      {
+        List<String> usergroups_a_3 = ListSequence.fromList(new ArrayList<String>());
+        ListSequence.fromList(usergroups_a_3).addElement("teachers");
+        printUserScriptBlock("joelian", "home/plp", usergroups_a_3);
+      }
+      {
+        List<String> usergroups_b_1 = ListSequence.fromList(new ArrayList<String>());
+        ListSequence.fromList(usergroups_b_1).addElement("hackers");
+        ListSequence.fromList(usergroups_b_1).addElement("students");
+        printUserScriptBlock("baba", usergroups_b_1);
+      }
+      {
+        Map<String, List<String>> permissions_a_5 = MapSequence.fromMap(new HashMap<String, List<String>>());
+        {
+          List<String> userPerm_a0_5 = ListSequence.fromList(new ArrayList<String>());
+          ListSequence.fromList(userPerm_a0_5).addElement("g");
+          ListSequence.fromList(userPerm_a0_5).addElement("rwx");
+          MapSequence.fromMap(permissions_a_5).put("teachers", userPerm_a0_5);
+        }
+        {
+          List<String> userPerm_b0_3 = ListSequence.fromList(new ArrayList<String>());
+          ListSequence.fromList(userPerm_b0_3).addElement("g");
+          ListSequence.fromList(userPerm_b0_3).addElement("---");
+          MapSequence.fromMap(permissions_a_5).put("students", userPerm_b0_3);
+        }
+        printFolderConfig("/polban", "joelian", "joelian", false, permissions_a_5);
+      }
       System.setOut(originalOut);
     } catch (IOException ioe) {
       originalOut.println("Could not write to ");

@@ -234,13 +234,67 @@
     <node concept="3WNPZY" id="4fCu$60zqIT" role="3WNPT$" />
   </node>
   <node concept="3PMmov" id="1K7Ri6yth0b">
-    <property role="TrG5h" value="Debia" />
+    <property role="TrG5h" value="Ubuntu" />
+    <node concept="3PM9D4" id="7bH$b0CuyM7" role="3PMd$3">
+      <property role="TrG5h" value="aa" />
+      <node concept="3PXWwV" id="7bH$b0CuyN1" role="3PXPcU">
+        <node concept="3PZKgQ" id="7bH$b0CuyNu" role="3PXPdi">
+          <ref role="3PZKgK" node="1K7Ri6yth0p" resolve="teachers" />
+        </node>
+        <node concept="3PMd$G" id="7bH$b0CuyN3" role="3PXPdj">
+          <property role="3PMd$7" value="3YnAujar0mD/allow" />
+          <property role="3PMd$0" value="3YnAujar0mD/allow" />
+          <property role="3PMd$1" value="3YnAujar0mD/allow" />
+        </node>
+      </node>
+      <node concept="3PXWwV" id="7bH$b0CuyNY" role="3PXPcU">
+        <node concept="3PZKgQ" id="7bH$b0CuyO1" role="3PXPdi">
+          <ref role="3PZKgK" node="7bH$b0CuyNG" resolve="students" />
+        </node>
+        <node concept="3PMd$G" id="7bH$b0CuyO0" role="3PXPdj">
+          <property role="3PMd$7" value="3YnAujar0mE/deny" />
+          <property role="3PMd$0" value="3YnAujar0mE/deny" />
+          <property role="3PMd$1" value="3YnAujar0mE/deny" />
+        </node>
+      </node>
+      <node concept="Xl_RD" id="7bH$b0CuyM8" role="3PZjji">
+        <property role="Xl_RC" value="/polban" />
+      </node>
+      <node concept="3clFbT" id="7bH$b0CuyM9" role="3WNPY4" />
+      <node concept="3PXWw4" id="7bH$b0CuyMP" role="3WNPTN">
+        <ref role="3PXWw5" node="7bH$b0CuyLA" resolve="joelian" />
+      </node>
+      <node concept="3PXWw4" id="7bH$b0CuyMZ" role="3WNPTK">
+        <ref role="3PXWw5" node="7bH$b0CuyLA" resolve="joelian" />
+      </node>
+    </node>
+    <node concept="3PM9Do" id="7bH$b0CuyLA" role="3WNytr">
+      <property role="TrG5h" value="joelian" />
+      <node concept="3PZKgQ" id="7bH$b0CuyLU" role="3WNPZu">
+        <ref role="3PZKgK" node="1K7Ri6yth0p" resolve="teachers" />
+      </node>
+      <node concept="Xl_RD" id="7bH$b0CuyLF" role="3WNPZ1">
+        <property role="Xl_RC" value="home/plp" />
+      </node>
+    </node>
+    <node concept="3PM9Do" id="7bH$b0CuyNc" role="3WNytr">
+      <property role="TrG5h" value="baba" />
+      <node concept="3PZKgQ" id="7bH$b0CuyNl" role="3WNPZu">
+        <ref role="3PZKgK" node="1K7Ri6yth0u" resolve="hackers" />
+      </node>
+      <node concept="3PZKgQ" id="7bH$b0CuyNP" role="3WNPZu">
+        <ref role="3PZKgK" node="7bH$b0CuyNG" resolve="students" />
+      </node>
+    </node>
     <node concept="3WNPZY" id="1K7Ri6yth0o" role="3WNPT$">
       <node concept="3PM9BN" id="1K7Ri6yth0p" role="3WNPZS">
-        <property role="TrG5h" value="furry" />
+        <property role="TrG5h" value="teachers" />
       </node>
       <node concept="3PM9BN" id="1K7Ri6yth0u" role="3WNPZS">
         <property role="TrG5h" value="hackers" />
+      </node>
+      <node concept="3PM9BN" id="7bH$b0CuyNG" role="3WNPZS">
+        <property role="TrG5h" value="students" />
       </node>
     </node>
   </node>
